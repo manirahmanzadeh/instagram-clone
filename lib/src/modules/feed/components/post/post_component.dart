@@ -60,12 +60,14 @@ class PostComponent extends StatelessWidget {
                     style: Theme.of(context).textTheme.bodyMedium,
                     children: const <TextSpan>[
                       TextSpan(
-                          text: 'Parsa Mohammadian',
-                          style: TextStyle(fontWeight: FontWeight.bold)),
+                        text: 'Parsa Mohammadian',
+                        style: TextStyle(fontWeight: FontWeight.bold),
+                      ),
                       TextSpan(text: ' and '),
                       TextSpan(
-                          text: '1,345 others',
-                          style: TextStyle(fontWeight: FontWeight.bold)),
+                        text: '1,345 others',
+                        style: TextStyle(fontWeight: FontWeight.bold),
+                      ),
                     ],
                   ),
                 ),
@@ -109,13 +111,13 @@ class PostComponent extends StatelessWidget {
           child: Row(
             children: [
               Expanded(
-                  child: Text(
-                'View 103 comments',
-                style: Theme.of(context)
-                    .textTheme
-                    .bodyMedium!
-                    .copyWith(color: const Color(0xFF8A8A8A)),
-              )),
+                child: Text(
+                  'View 103 comments',
+                  style: Theme.of(context).textTheme.bodyMedium!.copyWith(
+                        color: const Color(0xFF8A8A8A),
+                      ),
+                ),
+              ),
             ],
           ),
         ),
