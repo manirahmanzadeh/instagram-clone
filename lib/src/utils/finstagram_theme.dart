@@ -7,8 +7,8 @@ mixin FinstagramTheme {
     primaryColor: const Color(0xFFDD2A7B), // Instagram's primary color
     scaffoldBackgroundColor: Colors.white,
     appBarTheme: const AppBarTheme(
-      backgroundColor: Color(0xFFDD2A7B),
-      centerTitle: true,
+      backgroundColor: Colors.white,
+      foregroundColor: Colors.black,
     ),
     bottomNavigationBarTheme: const BottomNavigationBarThemeData(
       backgroundColor: Colors.white,

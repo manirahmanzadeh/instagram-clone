@@ -1,5 +1,5 @@
-
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:provider/provider.dart';
 
 import '../providers/feed_provider.dart';
@@ -18,12 +18,26 @@ class FeedPage extends StatelessWidget {
   }
 }
 
-
 class _FeedPage extends StatelessWidget {
   const _FeedPage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text(
+          'Finstagram',
+          style: TextStyle(
+            fontFamily: 'bill',
+            fontSize: 35,
+          ),
+        ),
+        actions: [
+          IconButton(onPressed: (){}, icon: SvgPicture.asset('assets/icons/feed/add.svg')),
+          IconButton(onPressed: (){}, icon: SvgPicture.asset('assets/icons/feed/like.svg')),
+          IconButton(onPressed: (){}, icon: SvgPicture.asset('assets/icons/feed/dm.svg')),
+        ],
+      ),
+    );
   }
 }
