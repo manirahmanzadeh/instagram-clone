@@ -1,0 +1,7 @@
+{
+  "appName": "Finstagram",
+  "@appName": {
+    "type": "text",
+    "description": "Apps name"
+  }
+}
