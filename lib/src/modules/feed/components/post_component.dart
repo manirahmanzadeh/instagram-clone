@@ -5,6 +5,12 @@ class PostComponent extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return Container(
+
+      decoration: const BoxDecoration(
+        border: Border.symmetric(vertical: BorderSide(color: Color(0xFFE0E0E0))),
+
+      ),
+    );
   }
 }
