@@ -44,7 +44,8 @@ class _FeedPage extends StatelessWidget {
       body: ListView(
         children: const [
           StoriesSection(),
-          PostComponent()
+          PostComponent(),
+          PostComponent(),
         ],
       )
     );

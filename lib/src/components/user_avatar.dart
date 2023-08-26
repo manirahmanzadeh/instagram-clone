@@ -21,9 +21,9 @@ class UserAvatar extends StatelessWidget {
             width: double.maxFinite,
             height: double.maxFinite,
           ),
-          const Padding(
-            padding: EdgeInsets.all(5),
-            child: CircleAvatar(
+          Padding(
+            padding: EdgeInsets.all(size * 7 /100),
+            child: const CircleAvatar(
               backgroundImage: AssetImage('assets/mock/feed/images/me.png'),
               radius: double.maxFinite,
             ),

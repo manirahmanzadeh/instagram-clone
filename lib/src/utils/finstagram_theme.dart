@@ -23,8 +23,8 @@ mixin FinstagramTheme {
         color: Color(0xFF474747),
       ),
       bodyLarge: TextStyle(
-        fontSize: 12,
-        fontWeight: FontWeight.w400,
+        fontSize: 14,
+        fontWeight: FontWeight.w500,
         color: Color(0xFF474747),
       ),
       bodyMedium: TextStyle(

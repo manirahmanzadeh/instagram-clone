@@ -21,7 +21,7 @@ class MyStoryHolder extends StatelessWidget {
                 height: double.maxFinite,
               ),
               const Padding(
-                padding: EdgeInsets.all(5),
+                padding: EdgeInsets.all(73 * 7 /100),
                 child: CircleAvatar(
                   backgroundImage: AssetImage('assets/mock/feed/images/me.png'),
                   radius: double.maxFinite,

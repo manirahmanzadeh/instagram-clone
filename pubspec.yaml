@@ -43,17 +43,11 @@ flutter:
     - family: proxima
       fonts:
         - asset: fonts/proxima/regular.ttf
-          weight: 400
         - asset: fonts/proxima/medium.ttf
-          weight: 500
         - asset: fonts/proxima/light.ttf
-          weight: 300
         - asset: fonts/proxima/bold.ttf
-          weight: 700
         - asset: fonts/proxima/semi-bold.ttf
-          weight: 600
         - asset: fonts/proxima/black.ttf
-          weight: 800
 
     - family: bill
       fonts:
