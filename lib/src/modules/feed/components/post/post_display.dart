@@ -1,11 +1,11 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:instagram_clone/src/models/file_model.dart';
+import '../../../../models/post/post_file_model.dart';
 
 class PostDisplay extends StatefulWidget {
   const PostDisplay({Key? key, required this.images}) : super(key: key);
-  final List<FileModel> images;
+  final List<PostFileModel> images;
 
   @override
   State<PostDisplay> createState() => _PostDisplayState();
@@ -44,7 +44,7 @@ class _PostDisplayState extends State<PostDisplay> {
                       width: MediaQuery.of(context).size.width,
                       decoration: BoxDecoration(
                         image: DecorationImage(
-                          image: AssetImage(e.file),
+                          image: AssetImage(e.file.file),
                           fit: BoxFit.cover,
                         ),
                       ),

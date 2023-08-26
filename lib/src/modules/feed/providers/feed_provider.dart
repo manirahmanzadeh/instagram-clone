@@ -1,10 +1,71 @@
 
 
+import 'dart:async';
+
 import 'package:flutter/material.dart';
+import 'package:infinite_scroll_pagination/infinite_scroll_pagination.dart';
 import 'package:instagram_clone/src/core/safe_provider.dart';
 
-class FeedProvider extends SafeProvider {
-  final BuildContext context;
-  FeedProvider({required this.context});
+import '../../../models/post/post_model.dart';
+import '../../../models/story/story_model.dart';
+import '../../../utils/error_handler.dart';
+import '../../../utils/error_template.dart';
+import '../api/feed_api.dart';
 
+class FeedProvider extends SafeProvider with ErrorHandler{
+  final BuildContext context;
+  PagingController<int, PostModel> postsPagingController = PagingController(firstPageKey: 0, invisibleItemsThreshold: 5);
+  late List<StoryModel> stories;
+  bool isLoadingStories = true;
+  final _feedApi = FeedApiMock();
+
+  FeedProvider({required this.context}){
+    initFeed();
+    initStories();
+  }
+
+  Future<void> initFeed() async {
+    postsPagingController.addPageRequestListener((pageKey) {
+      fetchPosts(pageKey);
+    });
+  }
+
+  Future<void> fetchPosts(int pageKey) async {
+    try {
+      final response = await _feedApi.fetchPosts(
+        offset: pageKey,
+      );
+
+      final newItems = response.posts;
+
+      if ((pageKey + newItems.length) == response.totalResult) {
+        postsPagingController.appendLastPage(newItems);
+      } else {
+        postsPagingController.appendPage(newItems, pageKey + newItems.length);
+      }
+    } on ApiError catch (e) {
+      postsPagingController.error = e;
+      showError(context, e);
+    }
+  }
+
+
+  Future<void> initStories() async {
+    isLoadingStories = true;
+    notifyListeners();
+    try {
+      stories = await _feedApi.fetchStories();
+    } on ApiError catch (e) {
+      postsPagingController.error = e;
+      showError(context, e);
+    }
+    isLoadingStories = false;
+    notifyListeners();
+  }
+
+
+
+  FutureOr<void> refreshPosts() {
+    postsPagingController.refresh();
+  }
 }

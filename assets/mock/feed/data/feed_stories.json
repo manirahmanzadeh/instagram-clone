@@ -1,0 +1,14 @@
+
+{
+  "stories" : [
+    {
+      "id" : "0",
+      "username" : "mani.rahmanzade",
+      "user_avatar" : {
+        "file" : "assets/mock/feed/images/me.png"
+      },
+      "seen" : false
+    }
+  ],
+  "total_results" : 1
+}

@@ -1,22 +1,42 @@
 import 'package:flutter/material.dart';
-import 'package:instagram_clone/src/components/user_avatar.dart';
 
+import '../../../components/user_avatar.dart';
+import '../../../models/story/story_model.dart';
 import 'my_story_holder.dart';
 
 class StoriesSection extends StatelessWidget {
-  const StoriesSection({Key? key}) : super(key: key);
+  const StoriesSection(
+      {Key? key, required this.stories, required this.isLoading})
+      : super(key: key);
+  final List<StoryModel> stories;
+  final bool isLoading;
 
   @override
   Widget build(BuildContext context) {
     return SizedBox(
       height: 90,
-      child: ListView(
-        scrollDirection: Axis.horizontal,
-        children: const [
-          Padding(padding: EdgeInsets.symmetric(horizontal: 6.5), child: MyStoryHolder(),),
-          Padding(padding: EdgeInsets.symmetric(horizontal: 6.5), child: UserAvatar(size: 73,),),
-          Padding(padding: EdgeInsets.symmetric(horizontal: 6.5), child: UserAvatar(size: 73,),),
-        ],
+      child: AnimatedSwitcher(
+        duration: const Duration(milliseconds: 350),
+        child: isLoading
+            ? const CircularProgressIndicator()
+            : ListView(
+                scrollDirection: Axis.horizontal,
+                children: const [
+                      Padding(
+                        padding: EdgeInsets.symmetric(horizontal: 6.5),
+                        child: MyStoryHolder(),
+                      ),
+                    ] +
+                    stories
+                        .map(
+                          (e) => Padding(
+                            padding:
+                                const EdgeInsets.symmetric(horizontal: 6.5),
+                            child: UserAvatar(size: 73, image: e.userAvatar),
+                          ),
+                        )
+                        .toList(),
+              ),
       ),
     );
   }

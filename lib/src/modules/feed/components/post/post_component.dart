@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 
 import '../../../../components/user_avatar.dart';
-import '../../../../models/file_model.dart';
+import '../../../../models/post/post_model.dart';
 import 'post_display.dart';
 
 class PostComponent extends StatelessWidget {
-  const PostComponent({Key? key}) : super(key: key);
+  const PostComponent({Key? key, required this.post}) : super(key: key);
+  final PostModel post;
 
   @override
   Widget build(BuildContext context) {
@@ -18,14 +19,15 @@ class PostComponent extends StatelessWidget {
           padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
           child: Row(
             children: [
-              const UserAvatar(
+              UserAvatar(
                 size: 41,
+                image: post.userAvatar,
               ),
               const SizedBox(
                 width: 5,
               ),
               Text(
-                'mani.rahmanzade',
+                post.username,
                 style: Theme.of(context).textTheme.displayLarge,
               ),
               Expanded(child: Container()),
@@ -39,16 +41,7 @@ class PostComponent extends StatelessWidget {
         const Divider(
           height: 1,
         ),
-        const PostDisplay(
-          images: [
-            FileModel(
-              file: 'assets/mock/feed/images/post.jpg',
-            ),
-            FileModel(
-              file: 'assets/mock/feed/images/post2.jpg',
-            ),
-          ],
-        ),
+        PostDisplay(images: post.files),
         Padding(
           padding: const EdgeInsets.symmetric(horizontal: 16),
           child: Row(
@@ -58,17 +51,23 @@ class PostComponent extends StatelessWidget {
                   text: TextSpan(
                     text: 'Liked by  ',
                     style: Theme.of(context).textTheme.bodyMedium,
-                    children: const <TextSpan>[
-                      TextSpan(
-                        text: 'Parsa Mohammadian',
-                        style: TextStyle(fontWeight: FontWeight.bold),
-                      ),
-                      TextSpan(text: ' and '),
-                      TextSpan(
-                        text: '1,345 others',
-                        style: TextStyle(fontWeight: FontWeight.bold),
-                      ),
-                    ],
+                    children: post.peopleLiked
+                            .map(
+                              (e) => TextSpan(
+                                text: '$e, ',
+                                style: const TextStyle(
+                                    fontWeight: FontWeight.bold),
+                              ),
+                            )
+                            .toList() +
+                        <TextSpan>[
+                          const TextSpan(text: 'and '),
+                          TextSpan(
+                            text:
+                                '${post.likesNumber - post.peopleLiked.length} others',
+                            style: const TextStyle(fontWeight: FontWeight.bold),
+                          ),
+                        ],
                   ),
                 ),
               ),
@@ -87,14 +86,13 @@ class PostComponent extends StatelessWidget {
                   text: TextSpan(
                     text: '',
                     style: Theme.of(context).textTheme.bodyMedium,
-                    children: const <TextSpan>[
+                    children: <TextSpan>[
                       TextSpan(
-                        text: 'mani.rahmanzade ',
-                        style: TextStyle(fontWeight: FontWeight.bold),
+                        text: '${post.username} ',
+                        style: const TextStyle(fontWeight: FontWeight.bold),
                       ),
                       TextSpan(
-                        text:
-                            'A good day with my friend Parsa. love you so much bro...',
+                        text: post.caption,
                       ),
                     ],
                   ),
@@ -112,7 +110,7 @@ class PostComponent extends StatelessWidget {
             children: [
               Expanded(
                 child: Text(
-                  'View 103 comments',
+                  'View ${post.commentsNumber} comments',
                   style: Theme.of(context).textTheme.bodyMedium!.copyWith(
                         color: const Color(0xFF8A8A8A),
                       ),
