@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:instagram_clone/src/core/routes.dart';
 import 'package:provider/provider.dart';
 import 'package:vrouter/vrouter.dart';
 
@@ -34,23 +35,13 @@ class _App extends StatelessWidget {
       supportedLocales: AppLocalizations.supportedLocales,
       localizationsDelegates: AppLocalizations.localizationsDelegates,
       mode: VRouterMode.history,
-      initialUrl: '/splash',
-      routes: routes,
+      initialUrl: '/feed',
+      routes: Routes.routes,
       buildTransition: (animation, _, child) => FadeTransition(
         opacity: animation,
         child: child,
       ),
     );
-  }
-
-  List<VRouteElement> get routes {
-    return [
-      // VWidget(
-      //   path: '/splash',
-      //   widget: const SplashPage(),
-      //   transitionDuration: Duration.zero,
-      // ),
-    ];
   }
 
 }
