@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:provider/provider.dart';
 
+import '../components/post_component.dart';
+import '../components/stories_section.dart';
 import '../providers/feed_provider.dart';
 
 class FeedPage extends StatelessWidget {
@@ -37,7 +39,14 @@ class _FeedPage extends StatelessWidget {
           IconButton(onPressed: (){}, icon: SvgPicture.asset('assets/icons/feed/like.svg')),
           IconButton(onPressed: (){}, icon: SvgPicture.asset('assets/icons/feed/dm.svg')),
         ],
+        elevation: 0,
       ),
+      body: ListView(
+        children: const [
+          StoriesSection(),
+          PostComponent()
+        ],
+      )
     );
   }
 }

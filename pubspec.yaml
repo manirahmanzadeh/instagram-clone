@@ -35,6 +35,9 @@ flutter:
   assets:
     - assets/icons/feed/
 
+    #mock: (Must be removed when api is ready)
+    - assets/mock/feed/images/
+
 
   fonts:
     - family: proxima
