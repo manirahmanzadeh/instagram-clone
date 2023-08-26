@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
 
-import '../../../components/user_avatar.dart';
+import '../../../../components/user_avatar.dart';
+import '../../../../models/file_model.dart';
+import 'post_display.dart';
 
 class PostComponent extends StatelessWidget {
   const PostComponent({Key? key}) : super(key: key);
@@ -38,48 +39,15 @@ class PostComponent extends StatelessWidget {
         const Divider(
           height: 1,
         ),
-        Container(
-          height: 375,
-          width: 375,
-          decoration: const BoxDecoration(
-            image: DecorationImage(
-              image: AssetImage('assets/mock/feed/images/post.jpg'),
-              fit: BoxFit.cover,
+        const PostDisplay(
+          images: [
+            FileModel(
+              file: 'assets/mock/feed/images/post.jpg',
             ),
-          ),
-        ),
-        const Divider(
-          height: 1,
-        ),
-        Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
-          child: Row(
-            children: [
-              InkWell(
-                onTap: () {},
-                child: SvgPicture.asset('assets/icons/feed/post-like.svg'),
-              ),
-              const SizedBox(
-                width: 15,
-              ),
-              InkWell(
-                onTap: () {},
-                child: SvgPicture.asset('assets/icons/feed/comment.svg'),
-              ),
-              const SizedBox(
-                width: 15,
-              ),
-              InkWell(
-                onTap: () {},
-                child: SvgPicture.asset('assets/icons/feed/send.svg'),
-              ),
-              Expanded(child: Container()),
-              InkWell(
-                onTap: () {},
-                child: SvgPicture.asset('assets/icons/feed/save.svg'),
-              ),
-            ],
-          ),
+            FileModel(
+              file: 'assets/mock/feed/images/post2.jpg',
+            ),
+          ],
         ),
         Padding(
           padding: const EdgeInsets.symmetric(horizontal: 16),
@@ -105,7 +73,9 @@ class PostComponent extends StatelessWidget {
             ],
           ),
         ),
-        const SizedBox(height: 8,),
+        const SizedBox(
+          height: 8,
+        ),
         Padding(
           padding: const EdgeInsets.symmetric(horizontal: 16),
           child: Row(
@@ -117,9 +87,13 @@ class PostComponent extends StatelessWidget {
                     style: Theme.of(context).textTheme.bodyMedium,
                     children: const <TextSpan>[
                       TextSpan(
-                          text: 'mani.rahmanzade ',
-                          style: TextStyle(fontWeight: FontWeight.bold)),
-                      TextSpan(text: 'A good day with my friend Parsa. love you so much bro...'),
+                        text: 'mani.rahmanzade ',
+                        style: TextStyle(fontWeight: FontWeight.bold),
+                      ),
+                      TextSpan(
+                        text:
+                            'A good day with my friend Parsa. love you so much bro...',
+                      ),
                     ],
                   ),
                 ),
@@ -127,20 +101,27 @@ class PostComponent extends StatelessWidget {
             ],
           ),
         ),
-        const SizedBox(height: 8,),
+        const SizedBox(
+          height: 8,
+        ),
         Padding(
           padding: const EdgeInsets.symmetric(horizontal: 16),
           child: Row(
             children: [
               Expanded(
-                child: Text('View 103 comments', style: Theme.of(context).textTheme.bodyMedium!.copyWith(
-                  color: const Color(0xFF8A8A8A)
-                ),)
-              ),
+                  child: Text(
+                'View 103 comments',
+                style: Theme.of(context)
+                    .textTheme
+                    .bodyMedium!
+                    .copyWith(color: const Color(0xFF8A8A8A)),
+              )),
             ],
           ),
         ),
-        const SizedBox(height: 8,),
+        const SizedBox(
+          height: 8,
+        ),
       ],
     );
   }

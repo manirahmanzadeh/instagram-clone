@@ -21,6 +21,7 @@ dependencies:
     sdk: flutter
   intl: any
   flutter_svg: ^2.0.7
+  carousel_slider: ^4.2.1
 
 dev_dependencies:
   flutter_test:
@@ -43,11 +44,11 @@ flutter:
     - family: proxima
       fonts:
         - asset: fonts/proxima/regular.ttf
-        - asset: fonts/proxima/medium.ttf
-        - asset: fonts/proxima/light.ttf
-        - asset: fonts/proxima/bold.ttf
-        - asset: fonts/proxima/semi-bold.ttf
-        - asset: fonts/proxima/black.ttf
+#        - asset: fonts/proxima/medium.ttf
+#        - asset: fonts/proxima/light.ttf
+#        - asset: fonts/proxima/bold.ttf
+#        - asset: fonts/proxima/semi-bold.ttf
+#        - asset: fonts/proxima/black.ttf
 
     - family: bill
       fonts:
