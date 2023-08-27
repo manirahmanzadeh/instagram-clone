@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../../../../components/user_avatar.dart';
 import '../../../../models/post/post_model.dart';
-import 'post_display.dart';
+import 'display/post_display.dart';
 
 class PostComponent extends StatelessWidget {
   const PostComponent({

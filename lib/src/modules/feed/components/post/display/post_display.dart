@@ -1,10 +1,10 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:instagram_clone/src/modules/feed/components/post/image_display.dart';
+import 'package:instagram_clone/src/modules/feed/components/post/display/image_display.dart';
 
-import '../../../../models/post/post_file_model.dart';
-import 'indicators/post_indicators.dart';
+import '../../../../../models/post/post_file_model.dart';
+import '../indicators/post_indicators.dart';
 import 'video_display.dart';
 
 class PostDisplay extends StatefulWidget {
@@ -67,12 +67,13 @@ class _PostDisplayState extends State<PostDisplay> {
                 }
               }).toList(),
             ),
-            PostIndicators(
-              totalPages: widget.images.length,
-              currentPageIndex: _current,
-              soundOn: widget.soundOpen,
-              displayed: widget.indicatorsDisplayed,
-            ),
+            if (widget.images.length > 1)
+              PostIndicators(
+                totalPages: widget.images.length,
+                currentPageIndex: _current,
+                soundOn: widget.soundOpen,
+                displayed: widget.indicatorsDisplayed,
+              ),
           ],
         ),
         const Divider(
@@ -112,24 +113,25 @@ class _PostDisplayState extends State<PostDisplay> {
                   ),
                 ],
               ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: widget.images
-                    .map(
-                      (e) => Container(
-                        height: 5,
-                        width: 5,
-                        margin: const EdgeInsets.symmetric(horizontal: 1),
-                        decoration: BoxDecoration(
-                          color: _current == widget.images.indexOf(e)
-                              ? Colors.blue
-                              : Colors.black38,
-                          shape: BoxShape.circle,
+              if (widget.images.length > 1)
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: widget.images
+                      .map(
+                        (e) => Container(
+                          height: 5,
+                          width: 5,
+                          margin: const EdgeInsets.symmetric(horizontal: 1),
+                          decoration: BoxDecoration(
+                            color: _current == widget.images.indexOf(e)
+                                ? Colors.blue
+                                : Colors.black38,
+                            shape: BoxShape.circle,
+                          ),
                         ),
-                      ),
-                    )
-                    .toList(),
-              ),
+                      )
+                      .toList(),
+                ),
             ],
           ),
         ),
