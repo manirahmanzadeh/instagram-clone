@@ -21,9 +21,15 @@
         },
         {
           "file" : {
-            "file" : "assets/mock/feed/images/post2.jpg"
+            "file" : "assets/mock/feed/videos/video_4.mp4"
           },
-          "type" : "image"
+          "type" : "video"
+        },
+        {
+          "file" : {
+            "file" : "assets/mock/feed/videos/video.mp4"
+          },
+          "type" : "video"
         }
       ]
     }

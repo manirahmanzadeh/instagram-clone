@@ -67,6 +67,8 @@ class _FeedPage extends StatelessWidget {
                       padding: const EdgeInsets.symmetric(vertical: 8),
                       child: PostComponent(
                         post: item,
+                        muteUnMute: staticProvider.muteUnMute,
+                        soundOpen: provider.soundOpen,
                       ),
                     ),
                   ],
@@ -76,6 +78,8 @@ class _FeedPage extends StatelessWidget {
                 padding: const EdgeInsets.symmetric(vertical: 8),
                 child: PostComponent(
                   post: item,
+                  muteUnMute: staticProvider.muteUnMute,
+                  soundOpen: provider.soundOpen,
                 ),
               );
             },

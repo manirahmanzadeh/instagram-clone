@@ -17,6 +17,8 @@ class FeedProvider extends SafeProvider with ErrorHandler{
   PagingController<int, PostModel> postsPagingController = PagingController(firstPageKey: 0, invisibleItemsThreshold: 5);
   late List<StoryModel> stories;
   bool isLoadingStories = true;
+  bool _soundOpen = true;
+  get soundOpen => _soundOpen;
   final _feedApi = FeedApiMock();
 
   FeedProvider({required this.context}){
@@ -68,4 +70,10 @@ class FeedProvider extends SafeProvider with ErrorHandler{
   FutureOr<void> refreshPosts() {
     postsPagingController.refresh();
   }
+
+  void muteUnMute() {
+    _soundOpen = !_soundOpen;
+    notifyListeners();
+  }
+
 }

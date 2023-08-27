@@ -1,11 +1,15 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:instagram_clone/src/modules/feed/components/post/image_display.dart';
 import '../../../../models/post/post_file_model.dart';
+import 'video_display.dart';
 
 class PostDisplay extends StatefulWidget {
-  const PostDisplay({Key? key, required this.images}) : super(key: key);
+  const PostDisplay({Key? key, required this.images, required this.muteUnMute, required this.soundOpen,}) : super(key: key);
   final List<PostFileModel> images;
+  final void Function() muteUnMute;
+  final bool soundOpen;
 
   @override
   State<PostDisplay> createState() => _PostDisplayState();
@@ -39,16 +43,13 @@ class _PostDisplayState extends State<PostDisplay> {
               carouselController: carouselController,
               items: widget.images
                   .map(
-                    (e) => Container(
-                      height: 357,
-                      width: MediaQuery.of(context).size.width,
-                      decoration: BoxDecoration(
-                        image: DecorationImage(
-                          image: AssetImage(e.file.file),
-                          fit: BoxFit.cover,
-                        ),
-                      ),
-                    ),
+                    (e) {
+                      if(e.fileType == FileType.image){
+                        return ImageDisplay(image: e.file.file);
+                      } else {
+                        return VideoDisplay(video: e.file.file, muteUnMute: widget.muteUnMute, soundOpen: widget.soundOpen,);
+                      }
+                    }
                   )
                   .toList(),
             ),
