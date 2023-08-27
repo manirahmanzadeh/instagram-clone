@@ -1,6 +1,6 @@
 import 'package:instagram_clone/src/models/file_model.dart';
 
-import 'post_file_model.dart';
+import 'media_model.dart';
 
 class PostModel {
   final String id;
@@ -11,7 +11,7 @@ class PostModel {
   final String caption;
   final int commentsNumber;
   final bool isSlide;
-  final List<PostFileModel> files;
+  final List<MediaModel> medias;
 
   PostModel({
     required this.id,
@@ -22,7 +22,7 @@ class PostModel {
     required this.caption,
     required this.commentsNumber,
     required this.isSlide,
-    required this.files,
+    required this.medias,
   });
 
   factory PostModel.fromJson(Map<String, dynamic> json) {
@@ -37,8 +37,8 @@ class PostModel {
       caption: json['caption'] as String,
       commentsNumber: json['comments_number'] as int,
       isSlide: json['is_slide'] as bool,
-      files: (json['files'] as List)
-          .map((e) => PostFileModel.fromJson(e as Map<String, dynamic>))
+      medias: (json['medias'] as List)
+          .map((e) => MediaModel.fromJson(e as Map<String, dynamic>))
           .toList(),
     );
   }

@@ -1,13 +1,13 @@
 import '../file_model.dart';
 
-class PostFileModel {
+class MediaModel {
   final FileModel file;
   final FileType fileType;
 
-  const PostFileModel({required this.file, required this.fileType});
+  const MediaModel({required this.file, required this.fileType});
 
-  factory PostFileModel.fromJson(Map<String, dynamic> json) {
-    return PostFileModel(
+  factory MediaModel.fromJson(Map<String, dynamic> json) {
+    return MediaModel(
       file: FileModel.fromJson(json['file'] as Map<String, dynamic>),
       fileType: fileTypeParser(json['type'] as String),
     );

@@ -53,7 +53,7 @@ class PostComponent extends StatelessWidget {
           height: 1,
         ),
         PostDisplay(
-          images: post.files,
+          medias: post.medias,
           muteUnMute: muteUnMute,
           soundOpen: soundOpen,
           displayIndicators: displayIndicators,

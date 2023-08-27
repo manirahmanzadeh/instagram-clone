@@ -3,20 +3,20 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:instagram_clone/src/modules/feed/components/post/display/image_display.dart';
 
-import '../../../../../models/post/post_file_model.dart';
+import '../../../../../models/post/media_model.dart';
 import '../indicators/post_indicators.dart';
 import 'video_display.dart';
 
 class PostDisplay extends StatefulWidget {
   const PostDisplay({
     Key? key,
-    required this.images,
+    required this.medias,
     required this.muteUnMute,
     required this.soundOpen,
     required this.indicatorsDisplayed,
     required this.displayIndicators,
   }) : super(key: key);
-  final List<PostFileModel> images;
+  final List<MediaModel> medias;
   final void Function() muteUnMute;
   final bool soundOpen;
   final bool indicatorsDisplayed;
@@ -53,7 +53,7 @@ class _PostDisplayState extends State<PostDisplay> {
                 },
               ),
               carouselController: carouselController,
-              items: widget.images.map((e) {
+              items: widget.medias.map((e) {
                 if (e.fileType == FileType.image) {
                   return ImageDisplay(image: e.file.file);
                 } else {
@@ -67,9 +67,9 @@ class _PostDisplayState extends State<PostDisplay> {
                 }
               }).toList(),
             ),
-            if (widget.images.length > 1)
+            if (widget.medias.length > 1)
               PostIndicators(
-                totalPages: widget.images.length,
+                totalPages: widget.medias.length,
                 currentPageIndex: _current,
                 soundOn: widget.soundOpen,
                 displayed: widget.indicatorsDisplayed,
@@ -113,17 +113,17 @@ class _PostDisplayState extends State<PostDisplay> {
                   ),
                 ],
               ),
-              if (widget.images.length > 1)
+              if (widget.medias.length > 1)
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
-                  children: widget.images
+                  children: widget.medias
                       .map(
                         (e) => Container(
                           height: 5,
                           width: 5,
                           margin: const EdgeInsets.symmetric(horizontal: 1),
                           decoration: BoxDecoration(
-                            color: _current == widget.images.indexOf(e)
+                            color: _current == widget.medias.indexOf(e)
                                 ? Colors.blue
                                 : Colors.black38,
                             shape: BoxShape.circle,
