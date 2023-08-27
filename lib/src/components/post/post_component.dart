@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-
-import '../../../../components/user_avatar.dart';
-import '../../../../models/post/post_model.dart';
+import 'package:instagram_clone/src/components/user_avatar.dart';
+import 'package:instagram_clone/src/models/post/post_model.dart';
 import 'display/post_display.dart';
 
 class PostComponent extends StatelessWidget {

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:instagram_clone/src/modules/feed/components/post/indicators/sound_indicator.dart';
+import 'package:instagram_clone/src/components/post/indicators/sound_indicator.dart';
 import 'package:video_player/video_player.dart';
 
 class VideoDisplay extends StatefulWidget {

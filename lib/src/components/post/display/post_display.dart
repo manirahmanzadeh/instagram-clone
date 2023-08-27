@@ -1,9 +1,8 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:instagram_clone/src/modules/feed/components/post/display/image_display.dart';
-
-import '../../../../../models/post/media_model.dart';
+import 'package:instagram_clone/src/components/post/display/image_display.dart';
+import 'package:instagram_clone/src/models/post/media_model.dart';
 import '../indicators/post_indicators.dart';
 import 'video_display.dart';
 

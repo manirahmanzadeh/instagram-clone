@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:infinite_scroll_pagination/infinite_scroll_pagination.dart';
+import 'package:instagram_clone/src/components/post/post_component.dart';
 import 'package:provider/provider.dart';
 
 import '../../../components/empty_state.dart';
 import '../../../models/post/post_model.dart';
-import '../components/post/post_component.dart';
 import '../components/stories_section.dart';
 import '../providers/feed_provider.dart';
 
