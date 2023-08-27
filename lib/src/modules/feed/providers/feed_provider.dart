@@ -1,5 +1,3 @@
-
-
 import 'dart:async';
 
 import 'package:flutter/material.dart';
@@ -12,16 +10,21 @@ import '../../../utils/error_handler.dart';
 import '../../../utils/error_template.dart';
 import '../api/feed_api.dart';
 
-class FeedProvider extends SafeProvider with ErrorHandler{
+class FeedProvider extends SafeProvider with ErrorHandler {
   final BuildContext context;
-  PagingController<int, PostModel> postsPagingController = PagingController(firstPageKey: 0, invisibleItemsThreshold: 5);
+  PagingController<int, PostModel> postsPagingController =
+      PagingController(firstPageKey: 0, invisibleItemsThreshold: 5);
   late List<StoryModel> stories;
   bool isLoadingStories = true;
-  bool _soundOpen = true;
-  get soundOpen => _soundOpen;
+  bool _soundOn = true;
+  bool _indicatorsDisplayed = false;
+
+  get soundOpen => _soundOn;
+  get indicatorsDisplayed => _indicatorsDisplayed;
+
   final _feedApi = FeedApiMock();
 
-  FeedProvider({required this.context}){
+  FeedProvider({required this.context}) {
     initFeed();
     initStories();
   }
@@ -51,7 +54,6 @@ class FeedProvider extends SafeProvider with ErrorHandler{
     }
   }
 
-
   Future<void> initStories() async {
     isLoadingStories = true;
     notifyListeners();
@@ -65,14 +67,25 @@ class FeedProvider extends SafeProvider with ErrorHandler{
     notifyListeners();
   }
 
-
-
   FutureOr<void> refreshPosts() {
     postsPagingController.refresh();
   }
 
   void muteUnMute() {
-    _soundOpen = !_soundOpen;
+    _soundOn = !_soundOn;
+    notifyListeners();
+  }
+
+  List<int> queue = [];
+  Future<void> displayIndicators() async {
+    queue.add(0);
+    _indicatorsDisplayed = true;
+    notifyListeners();
+    await Future.delayed(const Duration(seconds: 2));
+    queue.removeLast();
+    if(queue.isEmpty){
+      _indicatorsDisplayed = false;
+    }
     notifyListeners();
   }
 

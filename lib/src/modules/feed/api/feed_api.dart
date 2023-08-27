@@ -1,4 +1,5 @@
 import 'dart:convert';
+
 import 'package:flutter/services.dart';
 import 'package:instagram_clone/src/models/story/story_model.dart';
 import 'package:instagram_clone/src/modules/feed/models/feed_response_model.dart';
@@ -21,7 +22,8 @@ class FeedApiMock implements FeedApi {
     final int offset = 0,
   }) async {
     await Future.delayed(const Duration(seconds: 1));
-    final response = await rootBundle.loadString('assets/mock/feed/data/feed_posts.json');
+    final response =
+        await rootBundle.loadString('assets/mock/feed/data/feed_posts.json');
     final data = jsonDecode(response) as Map<String, dynamic>;
     return FeedResponseModel.fromJson(data);
   }
@@ -29,9 +31,11 @@ class FeedApiMock implements FeedApi {
   @override
   Future<List<StoryModel>> fetchStories() async {
     await Future.delayed(const Duration(seconds: 1));
-    final response = await rootBundle.loadString('assets/mock/feed/data/feed_stories.json');
+    final response =
+        await rootBundle.loadString('assets/mock/feed/data/feed_stories.json');
     final data = jsonDecode(response) as Map<String, dynamic>;
-    return (data['stories'] as List).map((e) => StoryModel.fromJson(e as Map<String, dynamic>)).toList();
+    return (data['stories'] as List)
+        .map((e) => StoryModel.fromJson(e as Map<String, dynamic>))
+        .toList();
   }
 }
-

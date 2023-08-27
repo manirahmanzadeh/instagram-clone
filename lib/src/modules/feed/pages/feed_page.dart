@@ -58,17 +58,22 @@ class _FeedPage extends StatelessWidget {
           pagingController: provider.postsPagingController,
           builderDelegate: PagedChildBuilderDelegate<PostModel>(
             itemBuilder: (context, item, index) {
-              if(index == 0){
+              if (index == 0) {
                 return Column(
                   mainAxisSize: MainAxisSize.min,
                   children: [
-                    StoriesSection(stories: provider.stories, isLoading: provider.isLoadingStories,),
+                    StoriesSection(
+                      stories: provider.stories,
+                      isLoading: provider.isLoadingStories,
+                    ),
                     Padding(
                       padding: const EdgeInsets.symmetric(vertical: 8),
                       child: PostComponent(
                         post: item,
                         muteUnMute: staticProvider.muteUnMute,
                         soundOpen: provider.soundOpen,
+                        indicatorsDisplayed: provider.indicatorsDisplayed,
+                        displayIndicators: staticProvider.displayIndicators,
                       ),
                     ),
                   ],
@@ -80,13 +85,14 @@ class _FeedPage extends StatelessWidget {
                   post: item,
                   muteUnMute: staticProvider.muteUnMute,
                   soundOpen: provider.soundOpen,
+                  indicatorsDisplayed: provider.indicatorsDisplayed,
+                  displayIndicators: staticProvider.displayIndicators,
                 ),
               );
             },
-            firstPageProgressIndicatorBuilder: (context) =>
-                const Center(
-                  child: CircularProgressIndicator(),
-                ),
+            firstPageProgressIndicatorBuilder: (context) => const Center(
+              child: CircularProgressIndicator(),
+            ),
             newPageErrorIndicatorBuilder: (context) => IconButton(
               onPressed: () {},
               icon: const Icon(

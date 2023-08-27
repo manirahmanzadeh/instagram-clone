@@ -21,7 +21,7 @@ class MyStoryHolder extends StatelessWidget {
                 height: double.maxFinite,
               ),
               const Padding(
-                padding: EdgeInsets.all(73 * 7 /100),
+                padding: EdgeInsets.all(73 * 7 / 100),
                 child: CircleAvatar(
                   backgroundImage: AssetImage('assets/mock/feed/images/me.png'),
                   radius: double.maxFinite,
@@ -30,7 +30,7 @@ class MyStoryHolder extends StatelessWidget {
             ],
           ),
           Transform.translate(
-              offset: const Offset(-5, -5),
+            offset: const Offset(-5, -5),
             child: Container(
               height: 22,
               width: 22,

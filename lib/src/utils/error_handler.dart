@@ -13,7 +13,8 @@ mixin ErrorHandler {
     );
   }
 
-  void showWarning({required BuildContext context, String message = 'عملیات ناموفق'}) {
+  void showWarning(
+      {required BuildContext context, String message = 'عملیات ناموفق'}) {
     final scaffoldMessengerState = ScaffoldMessenger.of(context);
     scaffoldMessengerState.showSnackBar(
       SnackBar(
@@ -23,7 +24,8 @@ mixin ErrorHandler {
     );
   }
 
-  void showSuccessMessage({required BuildContext context, String message = 'عملیات موفق'}) {
+  void showSuccessMessage(
+      {required BuildContext context, String message = 'عملیات موفق'}) {
     final scaffoldMessengerState = ScaffoldMessenger.of(context);
     scaffoldMessengerState.showSnackBar(
       SnackBar(

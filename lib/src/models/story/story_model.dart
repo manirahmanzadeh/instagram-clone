@@ -1,6 +1,5 @@
 import 'package:instagram_clone/src/models/file_model.dart';
 
-
 class StoryModel {
   final String id;
   final String username;
@@ -18,7 +17,8 @@ class StoryModel {
     return StoryModel(
       id: json['id'] as String,
       username: json['username'] as String,
-      userAvatar: FileModel.fromJson(json['user_avatar'] as Map<String, dynamic>),
+      userAvatar:
+          FileModel.fromJson(json['user_avatar'] as Map<String, dynamic>),
       seen: json['seen'] as bool,
     );
   }

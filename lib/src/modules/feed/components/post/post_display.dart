@@ -2,14 +2,25 @@ import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:instagram_clone/src/modules/feed/components/post/image_display.dart';
+
 import '../../../../models/post/post_file_model.dart';
+import 'indicators/post_indicators.dart';
 import 'video_display.dart';
 
 class PostDisplay extends StatefulWidget {
-  const PostDisplay({Key? key, required this.images, required this.muteUnMute, required this.soundOpen,}) : super(key: key);
+  const PostDisplay({
+    Key? key,
+    required this.images,
+    required this.muteUnMute,
+    required this.soundOpen,
+    required this.indicatorsDisplayed,
+    required this.displayIndicators,
+  }) : super(key: key);
   final List<PostFileModel> images;
   final void Function() muteUnMute;
   final bool soundOpen;
+  final bool indicatorsDisplayed;
+  final Future<void> Function() displayIndicators;
 
   @override
   State<PostDisplay> createState() => _PostDisplayState();
@@ -38,37 +49,33 @@ class _PostDisplayState extends State<PostDisplay> {
                   setState(() {
                     _current = index;
                   });
+                  widget.displayIndicators();
                 },
               ),
               carouselController: carouselController,
-              items: widget.images
-                  .map(
-                    (e) {
-                      if(e.fileType == FileType.image){
-                        return ImageDisplay(image: e.file.file);
-                      } else {
-                        return VideoDisplay(video: e.file.file, muteUnMute: widget.muteUnMute, soundOpen: widget.soundOpen,);
-                      }
-                    }
-                  )
-                  .toList(),
+              items: widget.images.map((e) {
+                if (e.fileType == FileType.image) {
+                  return ImageDisplay(image: e.file.file);
+                } else {
+                  return VideoDisplay(
+                    video: e.file.file,
+                    muteUnMute: widget.muteUnMute,
+                    soundOpen: widget.soundOpen,
+                    displayIndicators: widget.displayIndicators,
+                  );
+                }
+              }).toList(),
             ),
-            Container(
-              padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
-              margin: const EdgeInsets.all(16),
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(30),
-                color: Colors.black54,
+            SizedBox(
+              height: 357,
+              child: PostIndicators(
+                totalPages: widget.images.length,
+                currentPageIndex: _current,
+                soundOn: widget.soundOpen,
+                displayed: widget.indicatorsDisplayed,
+                isVideo: widget.images[_current].fileType == FileType.video,
               ),
-              child: Text(
-                '${_current + 1}/${widget.images.length}',
-                style: const TextStyle(
-                  color: Colors.white,
-                  fontWeight: FontWeight.w500,
-                  fontSize: 12,
-                ),
-              ),
-            )
+            ),
           ],
         ),
         const Divider(

@@ -29,13 +29,17 @@ class PostModel {
     return PostModel(
       id: json['id'] as String,
       username: json['username'] as String,
-      userAvatar: FileModel.fromJson(json['user_avatar'] as Map<String, dynamic>),
+      userAvatar:
+          FileModel.fromJson(json['user_avatar'] as Map<String, dynamic>),
       likesNumber: json['likes_number'] as int,
-      peopleLiked: (json['people_liked'] as List).map((e) => e as String).toList(),
+      peopleLiked:
+          (json['people_liked'] as List).map((e) => e as String).toList(),
       caption: json['caption'] as String,
       commentsNumber: json['comments_number'] as int,
       isSlide: json['is_slide'] as bool,
-      files: (json['files'] as List).map((e) => PostFileModel.fromJson(e as Map<String, dynamic>)).toList(),
+      files: (json['files'] as List)
+          .map((e) => PostFileModel.fromJson(e as Map<String, dynamic>))
+          .toList(),
     );
   }
 }

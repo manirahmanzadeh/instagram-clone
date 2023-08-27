@@ -5,11 +5,19 @@ import '../../../../models/post/post_model.dart';
 import 'post_display.dart';
 
 class PostComponent extends StatelessWidget {
-  const PostComponent({Key? key, required this.post, required this.muteUnMute, required this.soundOpen,}) : super(key: key);
+  const PostComponent({
+    Key? key,
+    required this.post,
+    required this.muteUnMute,
+    required this.soundOpen,
+    required this.indicatorsDisplayed,
+    required this.displayIndicators,
+  }) : super(key: key);
   final PostModel post;
   final void Function() muteUnMute;
   final bool soundOpen;
-
+  final bool indicatorsDisplayed;
+  final Future<void> Function() displayIndicators;
 
   @override
   Widget build(BuildContext context) {
@@ -44,7 +52,13 @@ class PostComponent extends StatelessWidget {
         const Divider(
           height: 1,
         ),
-        PostDisplay(images: post.files, muteUnMute: muteUnMute, soundOpen: soundOpen,),
+        PostDisplay(
+          images: post.files,
+          muteUnMute: muteUnMute,
+          soundOpen: soundOpen,
+          displayIndicators: displayIndicators,
+          indicatorsDisplayed: indicatorsDisplayed,
+        ),
         Padding(
           padding: const EdgeInsets.symmetric(horizontal: 16),
           child: Row(
