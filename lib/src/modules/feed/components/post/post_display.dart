@@ -62,19 +62,16 @@ class _PostDisplayState extends State<PostDisplay> {
                     muteUnMute: widget.muteUnMute,
                     soundOpen: widget.soundOpen,
                     displayIndicators: widget.displayIndicators,
+                    soundIndicatorDisplay: widget.indicatorsDisplayed,
                   );
                 }
               }).toList(),
             ),
-            SizedBox(
-              height: 357,
-              child: PostIndicators(
-                totalPages: widget.images.length,
-                currentPageIndex: _current,
-                soundOn: widget.soundOpen,
-                displayed: widget.indicatorsDisplayed,
-                isVideo: widget.images[_current].fileType == FileType.video,
-              ),
+            PostIndicators(
+              totalPages: widget.images.length,
+              currentPageIndex: _current,
+              soundOn: widget.soundOpen,
+              displayed: widget.indicatorsDisplayed,
             ),
           ],
         ),

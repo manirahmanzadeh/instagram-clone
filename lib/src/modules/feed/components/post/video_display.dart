@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:instagram_clone/src/modules/feed/components/post/indicators/sound_indicator.dart';
 import 'package:video_player/video_player.dart';
 
 class VideoDisplay extends StatefulWidget {
@@ -8,9 +9,11 @@ class VideoDisplay extends StatefulWidget {
     required this.muteUnMute,
     required this.soundOpen,
     required this.displayIndicators,
+    required this.soundIndicatorDisplay,
   }) : super(key: key);
   final String video;
   final bool soundOpen;
+  final bool soundIndicatorDisplay;
   final void Function() muteUnMute;
   final void Function() displayIndicators;
 
@@ -48,9 +51,10 @@ class _VideoDisplayState extends State<VideoDisplay> {
   }
 
   Future<void> muteUnMute() async {
-    await controller?.setVolume(widget.soundOpen ? 0 : 1);
+    if(widget.soundIndicatorDisplay){
+      await controller?.setVolume(widget.soundOpen ? 0 : 1);
+    }
     widget.muteUnMute();
-    widget.displayIndicators();
   }
 
   @override
@@ -61,7 +65,17 @@ class _VideoDisplayState extends State<VideoDisplay> {
         height: 357,
         child: controller == null
             ? const Center(child: CircularProgressIndicator())
-            : VideoPlayer(controller!),
+            : Stack(
+                alignment: Alignment.bottomRight,
+                children: [
+                  VideoPlayer(controller!),
+                  AnimatedOpacity(
+                    opacity: widget.soundIndicatorDisplay ? 1 : 0,
+                    duration: const Duration(milliseconds: 350),
+                    child: SoundIndicator(soundOn: widget.soundOpen),
+                  ),
+                ],
+              ),
       ),
     );
   }

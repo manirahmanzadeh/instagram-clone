@@ -72,8 +72,11 @@ class FeedProvider extends SafeProvider with ErrorHandler {
   }
 
   void muteUnMute() {
-    _soundOn = !_soundOn;
-    notifyListeners();
+    if(_indicatorsDisplayed){
+      _soundOn = !_soundOn;
+      notifyListeners();
+    }
+    displayIndicators();
   }
 
   List<int> queue = [];
