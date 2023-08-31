@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:infinite_scroll_pagination/infinite_scroll_pagination.dart';
 import 'package:instagram_clone/src/core/safe_provider.dart';
 
+import '../../../apis/post_api.dart';
 import '../../../models/post/post_model.dart';
 import '../../../models/story/story_model.dart';
 import '../../../utils/error_handler.dart';
@@ -23,6 +24,7 @@ class FeedProvider extends SafeProvider with ErrorHandler {
   get indicatorsDisplayed => _indicatorsDisplayed;
 
   final _feedApi = FeedApiMock();
+  final _postApi = PostApiMock();
 
   FeedProvider({required this.context}) {
     initFeed();
@@ -90,6 +92,17 @@ class FeedProvider extends SafeProvider with ErrorHandler {
       _indicatorsDisplayed = false;
     }
     notifyListeners();
+  }
+
+
+  Future<void> likeUnlikePost(PostModel item) async {
+    try {
+      item.liked = !item.liked;
+      notifyListeners();
+      await _postApi.like(item.id);
+    } on ApiError catch (e) {
+      showError(context, e);
+    }
   }
 
 }

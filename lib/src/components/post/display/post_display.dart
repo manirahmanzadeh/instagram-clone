@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:instagram_clone/src/components/post/display/image_display.dart';
 import 'package:instagram_clone/src/models/post/media_model.dart';
+
 import '../indicators/post_indicators.dart';
 import 'video_display.dart';
 
@@ -14,21 +15,69 @@ class PostDisplay extends StatefulWidget {
     required this.soundOpen,
     required this.indicatorsDisplayed,
     required this.displayIndicators,
+    required this.likeUnlikePost,
+    required this.liked,
   }) : super(key: key);
   final List<MediaModel> medias;
   final void Function() muteUnMute;
   final bool soundOpen;
+  final bool liked;
   final bool indicatorsDisplayed;
   final Future<void> Function() displayIndicators;
+  final Future<void> Function() likeUnlikePost;
 
   @override
   State<PostDisplay> createState() => _PostDisplayState();
 }
 
-class _PostDisplayState extends State<PostDisplay> {
+class _PostDisplayState extends State<PostDisplay>
+    with SingleTickerProviderStateMixin {
   int _current = 0;
 
   final CarouselController carouselController = CarouselController();
+
+  late AnimationController _likeAnimationController;
+  late Animation<double> _likeAnimation;
+
+  @override
+  void initState() {
+    _likeAnimationController = AnimationController(
+      vsync: this,
+      duration: const Duration(seconds: 1),
+    );
+    _likeAnimation = Tween<double>(
+      begin: 0,
+      end: 1,
+    ).animate(CurvedAnimation(
+      parent: _likeAnimationController,
+      curve: Curves.bounceOut,
+    ));
+    _likeAnimationController.addListener(() {
+      setState(() {});
+    });
+
+    _likeAnimationController.addStatusListener((status) {
+      switch (status) {
+        case AnimationStatus.forward:
+          break;
+        case AnimationStatus.completed:
+          _likeAnimationController.reverse();
+          break;
+        case AnimationStatus.reverse:
+          break;
+        case AnimationStatus.dismissed:
+          break;
+      }
+    });
+    super.initState();
+  }
+
+  void like() {
+    if (!widget.liked) {
+      _likeAnimationController.forward();
+    }
+    widget.likeUnlikePost();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -38,33 +87,46 @@ class _PostDisplayState extends State<PostDisplay> {
         Stack(
           alignment: Alignment.topRight,
           children: [
-            CarouselSlider(
-              options: CarouselOptions(
-                viewportFraction: 1.0,
-                enlargeCenterPage: false,
-                height: 357,
-                enableInfiniteScroll: false,
-                onPageChanged: (index, reason) {
-                  setState(() {
-                    _current = index;
-                  });
-                  widget.displayIndicators();
-                },
-              ),
-              carouselController: carouselController,
-              items: widget.medias.map((e) {
-                if (e.fileType == FileType.image) {
-                  return ImageDisplay(image: e.file.file);
-                } else {
-                  return VideoDisplay(
-                    video: e.file.file,
-                    muteUnMute: widget.muteUnMute,
-                    soundOpen: widget.soundOpen,
-                    displayIndicators: widget.displayIndicators,
-                    soundIndicatorDisplay: widget.indicatorsDisplayed,
-                  );
-                }
-              }).toList(),
+            Stack(
+              alignment: Alignment.center,
+              children: [
+                GestureDetector(
+                  onDoubleTap: like,
+                  child: CarouselSlider(
+                    options: CarouselOptions(
+                      viewportFraction: 1.0,
+                      enlargeCenterPage: false,
+                      height: 357,
+                      enableInfiniteScroll: false,
+                      onPageChanged: (index, reason) {
+                        setState(() {
+                          _current = index;
+                        });
+                        widget.displayIndicators();
+                      },
+                    ),
+                    carouselController: carouselController,
+                    items: widget.medias.map((e) {
+                      if (e.fileType == FileType.image) {
+                        return ImageDisplay(image: e.file.file);
+                      } else {
+                        return VideoDisplay(
+                          video: e.file.file,
+                          muteUnMute: widget.muteUnMute,
+                          soundOpen: widget.soundOpen,
+                          displayIndicators: widget.displayIndicators,
+                          soundIndicatorDisplay: widget.indicatorsDisplayed,
+                        );
+                      }
+                    }).toList(),
+                  ),
+                ),
+                SvgPicture.asset(
+                  'assets/icons/post/like_filled_white.svg',
+                  width: _likeAnimation.value * 100,
+                  height: _likeAnimation.value * 100,
+                ),
+              ],
             ),
             if (widget.medias.length > 1)
               PostIndicators(
@@ -86,29 +148,36 @@ class _PostDisplayState extends State<PostDisplay> {
               Row(
                 children: [
                   InkWell(
-                    onTap: () {},
-                    child: SvgPicture.asset('assets/icons/feed/post-like.svg'),
+                    onTap: like,
+                    child: widget.liked
+                        ? SvgPicture.asset(
+                            'assets/icons/post/like_filled.svg',
+                          )
+                        : SvgPicture.asset(
+                            'assets/icons/post/like_outlined.svg',
+                          ),
                   ),
                   const SizedBox(
                     width: 15,
                   ),
                   InkWell(
                     onTap: () {},
-                    child: SvgPicture.asset('assets/icons/feed/comment.svg'),
+                    child: SvgPicture.asset('assets/icons/post/comment.svg'),
                   ),
                   const SizedBox(
                     width: 15,
                   ),
                   InkWell(
                     onTap: () {},
-                    child: SvgPicture.asset('assets/icons/feed/send.svg'),
+                    child: SvgPicture.asset('assets/icons/post/send.svg'),
                   ),
                   Expanded(
                     child: Container(),
                   ),
                   InkWell(
                     onTap: () {},
-                    child: SvgPicture.asset('assets/icons/feed/save.svg'),
+                    child:
+                        SvgPicture.asset('assets/icons/post/save_outlined.svg'),
                   ),
                 ],
               ),

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:instagram_clone/src/components/user_avatar.dart';
 import 'package:instagram_clone/src/models/post/post_model.dart';
+
 import 'display/post_display.dart';
 
 class PostComponent extends StatelessWidget {
@@ -11,12 +12,16 @@ class PostComponent extends StatelessWidget {
     required this.soundOpen,
     required this.indicatorsDisplayed,
     required this.displayIndicators,
+    required this.likeUnlikePost,
+    required this.liked,
   }) : super(key: key);
   final PostModel post;
   final void Function() muteUnMute;
   final bool soundOpen;
+  final bool liked;
   final bool indicatorsDisplayed;
   final Future<void> Function() displayIndicators;
+  final Future<void> Function() likeUnlikePost;
 
   @override
   Widget build(BuildContext context) {
@@ -57,6 +62,8 @@ class PostComponent extends StatelessWidget {
           soundOpen: soundOpen,
           displayIndicators: displayIndicators,
           indicatorsDisplayed: indicatorsDisplayed,
+          likeUnlikePost: likeUnlikePost,
+          liked: liked,
         ),
         Padding(
           padding: const EdgeInsets.symmetric(horizontal: 16),

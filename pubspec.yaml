@@ -37,6 +37,7 @@ flutter:
 
   assets:
     - assets/icons/feed/
+    - assets/icons/post/
 
     #mock: (Must be removed when api is ready)
     - assets/mock/feed/images/

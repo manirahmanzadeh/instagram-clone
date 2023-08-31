@@ -12,6 +12,7 @@
       "people_liked" : ["parsa", "jafar", "akbar"],
       "caption" : "A good day with my friend Parsa. love you so much bro...",
       "is_slide" : true,
+      "liked" : false,
       "medias" : [
         {
           "file" : {
@@ -44,6 +45,7 @@
       "people_liked" : ["parsa", "jafar", "akbar"],
       "caption" : "A good day with my friend Parsa. love you so much bro...",
       "is_slide" : true,
+      "liked" : true,
       "medias" : [
         {
           "file" : {
