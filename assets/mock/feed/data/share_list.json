@@ -1,0 +1,13 @@
+{
+  "users": [
+    {
+      "id": "0",
+      "username": "mani.rahmanzade",
+      "user_avatar": {
+        "file": "assets/mock/feed/images/me.png"
+      },
+      "name": "Mani Rahmanzadeh"
+    }
+  ],
+  "total_results": 1
+}
