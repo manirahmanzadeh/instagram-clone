@@ -34,6 +34,7 @@ class CommentForm extends StatelessWidget {
                 decoration: const InputDecoration(
                   labelText: 'Add Comment...',
                   isDense: true,
+                  border: InputBorder.none,
                   contentPadding: EdgeInsets.symmetric(
                     horizontal: 16,
                     vertical: 8,
