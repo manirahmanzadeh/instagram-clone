@@ -2,7 +2,9 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:infinite_scroll_pagination/infinite_scroll_pagination.dart';
+import 'package:instagram_clone/src/apis/users_api.dart';
 import 'package:instagram_clone/src/core/safe_provider.dart';
+import 'package:instagram_clone/src/models/users/user_model.dart';
 
 import '../../../apis/post_api.dart';
 import '../../../models/post/post_model.dart';
@@ -15,6 +17,8 @@ class FeedProvider extends SafeProvider with ErrorHandler {
   final BuildContext context;
   PagingController<int, PostModel> postsPagingController =
       PagingController(firstPageKey: 0, invisibleItemsThreshold: 5);
+  PagingController<int, UserModel> shareListPagingController =
+  PagingController(firstPageKey: 0, invisibleItemsThreshold: 5);
   late List<StoryModel> stories;
   bool isLoadingStories = true;
   bool _soundOn = true;
@@ -25,6 +29,7 @@ class FeedProvider extends SafeProvider with ErrorHandler {
 
   final _feedApi = FeedApiMock();
   final _postApi = PostApiMock();
+  final _usersApi = UsersApiMock();
 
   FeedProvider({required this.context}) {
     initFeed();
@@ -34,6 +39,9 @@ class FeedProvider extends SafeProvider with ErrorHandler {
   Future<void> initFeed() async {
     postsPagingController.addPageRequestListener((pageKey) {
       fetchPosts(pageKey);
+    });
+    shareListPagingController.addPageRequestListener((pageKey) {
+      fetchShareList(pageKey);
     });
   }
 
@@ -52,6 +60,23 @@ class FeedProvider extends SafeProvider with ErrorHandler {
       }
     } on ApiError catch (e) {
       postsPagingController.error = e;
+      showError(context, e);
+    }
+  }
+
+  Future<void> fetchShareList(int pageKey) async {
+    try {
+      final response = await _usersApi.getShareList(
+        offset: pageKey,
+      );
+      final newItems = response.posts;
+      if ((pageKey + newItems.length) == response.totalResult) {
+        shareListPagingController.appendLastPage(newItems);
+      } else {
+        shareListPagingController.appendPage(newItems, pageKey + newItems.length);
+      }
+    } on ApiError catch (e) {
+      shareListPagingController.error = e;
       showError(context, e);
     }
   }
@@ -115,4 +140,8 @@ class FeedProvider extends SafeProvider with ErrorHandler {
     }
   }
 
+
+  refreshUsers() {
+    shareListPagingController.refresh();
+  }
 }

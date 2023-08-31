@@ -81,6 +81,8 @@ class _FeedPage extends StatelessWidget {
                         likeUnlikePost: () => staticProvider.likeUnlikePost(item),
                         saveUnSavePost: () => staticProvider.saveUnSavePost(item),
                         saved: item.saved,
+                        usersPagingController: provider.shareListPagingController,
+                        refreshUsers: staticProvider.refreshUsers,
                       ),
                     ),
                   ],
@@ -98,6 +100,8 @@ class _FeedPage extends StatelessWidget {
                   likeUnlikePost: () => staticProvider.likeUnlikePost(item),
                   saveUnSavePost: () => staticProvider.saveUnSavePost(item),
                   saved: item.saved,
+                  usersPagingController: provider.shareListPagingController,
+                  refreshUsers: staticProvider.refreshUsers,
                 ),
               );
             },
