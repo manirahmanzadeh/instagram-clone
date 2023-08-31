@@ -17,6 +17,12 @@ abstract class CommentsApi {
     throw UnimplementedError();
   }
 
+  Future<void> sendComment({
+    required String text,
+  }) async {
+    throw UnimplementedError();
+  }
+
 }
 
 class CommentsApiMock implements CommentsApi {
@@ -37,6 +43,11 @@ class CommentsApiMock implements CommentsApi {
   Future<void> likeComment({
     required String commentId,
   }) async {
+    await Future.delayed(const Duration(seconds: 1));
+  }
+
+  @override
+  Future<void> sendComment({required String text}) async {
     await Future.delayed(const Duration(seconds: 1));
   }
 }

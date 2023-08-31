@@ -8,6 +8,7 @@ import 'package:provider/provider.dart';
 import 'package:vrouter/vrouter.dart';
 
 import '../../../components/empty_state.dart';
+import '../components/comment_form.dart';
 
 class CommentsPage extends StatelessWidget {
   const CommentsPage({super.key});
@@ -39,63 +40,76 @@ class _CommentsPage extends StatelessWidget {
         ),
         elevation: 0,
       ),
-      body: RefreshIndicator(
-        onRefresh: () => Future.sync(staticProvider.refreshComments),
-        child: PagedListView<int, CommentModel>(
-          pagingController: provider.commentsPagingController,
-          builderDelegate: PagedChildBuilderDelegate<CommentModel>(
-            itemBuilder: (context, item, index) {
-              return ListTile(
-                leading: UserAvatar(size: 40, image: item.userAvatar),
-                title: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Text(item.username),
-                    Column(
-                      mainAxisSize: MainAxisSize.min,
-                      children: [
-                        InkWell(
-                          onTap: () => staticProvider.likeComment(item),
-                          child: item.liked
-                              ? SvgPicture.asset(
-                                  'assets/icons/post/like_filled.svg',
-                                )
-                              : SvgPicture.asset(
-                                  'assets/icons/post/like_outlined.svg',
-                                ),
-                        ),
-                        Text(
-                          item.likesNumber.toString(),
-                          style: Theme.of(context).textTheme.bodySmall,
-                        )
-                      ],
+      body: Column(
+        children: [
+          Expanded(
+            child: RefreshIndicator(
+              onRefresh: () => Future.sync(staticProvider.refreshComments),
+              child: PagedListView<int, CommentModel>(
+                pagingController: provider.commentsPagingController,
+                builderDelegate: PagedChildBuilderDelegate<CommentModel>(
+                  itemBuilder: (context, item, index) {
+                    return ListTile(
+                      leading: UserAvatar(size: 40, image: item.userAvatar),
+                      title: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Text(item.username),
+                          Column(
+                            mainAxisSize: MainAxisSize.min,
+                            children: [
+                              InkWell(
+                                onTap: () => staticProvider.likeComment(item),
+                                child: item.liked
+                                    ? SvgPicture.asset(
+                                        'assets/icons/post/like_filled.svg',
+                                      )
+                                    : SvgPicture.asset(
+                                        'assets/icons/post/like_outlined.svg',
+                                      ),
+                              ),
+                              Text(
+                                item.likesNumber.toString(),
+                                style: Theme.of(context).textTheme.bodySmall,
+                              )
+                            ],
+                          ),
+                        ],
+                      ),
+                      subtitle: Text(
+                        item.text,
+                        style: Theme.of(context).textTheme.bodyMedium,
+                      ),
+                    );
+                  },
+                  firstPageProgressIndicatorBuilder: (context) => const Center(
+                    child: CircularProgressIndicator(),
+                  ),
+                  newPageErrorIndicatorBuilder: (context) => IconButton(
+                    onPressed: () {},
+                    icon: const Icon(
+                      Icons.refresh_rounded,
                     ),
-                  ],
+                  ),
+                  firstPageErrorIndicatorBuilder: (context) => IconButton(
+                    onPressed: staticProvider.refreshComments,
+                    icon: const Icon(
+                      Icons.refresh_rounded,
+                    ),
+                  ),
+                  noItemsFoundIndicatorBuilder: (context) => const EmptyState(),
                 ),
-                subtitle: Text(
-                  item.text,
-                  style: Theme.of(context).textTheme.bodyMedium,
-                ),
-              );
-            },
-            firstPageProgressIndicatorBuilder: (context) => const Center(
-              child: CircularProgressIndicator(),
-            ),
-            newPageErrorIndicatorBuilder: (context) => IconButton(
-              onPressed: () {},
-              icon: const Icon(
-                Icons.refresh_rounded,
               ),
             ),
-            firstPageErrorIndicatorBuilder: (context) => IconButton(
-              onPressed: staticProvider.refreshComments,
-              icon: const Icon(
-                Icons.refresh_rounded,
-              ),
-            ),
-            noItemsFoundIndicatorBuilder: (context) => const EmptyState(),
           ),
-        ),
+          const Divider(),
+          CommentForm(
+            formKey: staticProvider.commentFormKey,
+            saveComment: staticProvider.saveComment,
+            sendComment: staticProvider.sendComment,
+            controller: staticProvider.textEditingController,
+          ),
+        ],
       ),
     );
   }
