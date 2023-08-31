@@ -3,7 +3,7 @@ import 'package:infinite_scroll_pagination/infinite_scroll_pagination.dart';
 import 'package:instagram_clone/src/components/user_avatar.dart';
 import 'package:instagram_clone/src/models/post/post_model.dart';
 
-import '../../models/users/user_model.dart';
+import '../../models/users/share_user_model.dart';
 import 'display/post_display.dart';
 
 class PostComponent extends StatelessWidget {
@@ -30,7 +30,7 @@ class PostComponent extends StatelessWidget {
   final Future<void> Function() displayIndicators;
   final Future<void> Function() likeUnlikePost;
   final Future<void> Function() saveUnSavePost;
-  final PagingController<int, UserModel> usersPagingController;
+  final PagingController<int, ShareUserModel> usersPagingController;
   final Function() refreshUsers;
 
   @override

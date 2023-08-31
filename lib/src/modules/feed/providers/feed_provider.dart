@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:infinite_scroll_pagination/infinite_scroll_pagination.dart';
 import 'package:instagram_clone/src/apis/users_api.dart';
 import 'package:instagram_clone/src/core/safe_provider.dart';
-import 'package:instagram_clone/src/models/users/user_model.dart';
+import 'package:instagram_clone/src/models/users/share_user_model.dart';
 
 import '../../../apis/post_api.dart';
 import '../../../models/post/post_model.dart';
@@ -17,7 +17,7 @@ class FeedProvider extends SafeProvider with ErrorHandler {
   final BuildContext context;
   PagingController<int, PostModel> postsPagingController =
       PagingController(firstPageKey: 0, invisibleItemsThreshold: 5);
-  PagingController<int, UserModel> shareListPagingController =
+  PagingController<int, ShareUserModel> shareListPagingController =
   PagingController(firstPageKey: 0, invisibleItemsThreshold: 5);
   late List<StoryModel> stories;
   bool isLoadingStories = true;
