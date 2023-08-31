@@ -6,6 +6,12 @@ abstract class PostApi {
     throw UnimplementedError();
   }
 
+  Future<void> save(
+      final String postId,
+      ) async {
+    throw UnimplementedError();
+  }
+
   Future<void> comment(
       final String postId,
       final String text,
@@ -21,6 +27,13 @@ class PostApiMock implements PostApi {
   Future<void> like(
     final String postId,
   ) async {
+    await Future.delayed(const Duration(seconds: 1));
+  }
+
+  @override
+  Future<void> save(
+      final String postId,
+      ) async {
     await Future.delayed(const Duration(seconds: 1));
   }
 

@@ -12,6 +12,7 @@ class PostModel {
   final int commentsNumber;
   final bool isSlide;
   bool liked;
+  bool saved;
   final List<MediaModel> medias;
 
   PostModel({
@@ -25,6 +26,7 @@ class PostModel {
     required this.isSlide,
     required this.medias,
     required this.liked,
+    required this.saved,
   });
 
   factory PostModel.fromJson(Map<String, dynamic> json) {
@@ -40,6 +42,7 @@ class PostModel {
       commentsNumber: json['comments_number'] as int,
       isSlide: json['is_slide'] as bool,
       liked: json['liked'] as bool,
+      saved: json['saved'] as bool,
       medias: (json['medias'] as List)
           .map((e) => MediaModel.fromJson(e as Map<String, dynamic>))
           .toList(),

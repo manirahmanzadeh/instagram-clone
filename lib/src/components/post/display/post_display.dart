@@ -17,14 +17,18 @@ class PostDisplay extends StatefulWidget {
     required this.displayIndicators,
     required this.likeUnlikePost,
     required this.liked,
+    required this.saved,
+    required this.saveUnSavePost,
   }) : super(key: key);
   final List<MediaModel> medias;
   final void Function() muteUnMute;
   final bool soundOpen;
   final bool liked;
+  final bool saved;
   final bool indicatorsDisplayed;
   final Future<void> Function() displayIndicators;
   final Future<void> Function() likeUnlikePost;
+  final Future<void> Function() saveUnSavePost;
 
   @override
   State<PostDisplay> createState() => _PostDisplayState();
@@ -77,6 +81,12 @@ class _PostDisplayState extends State<PostDisplay>
       _likeAnimationController.forward();
     }
     widget.likeUnlikePost();
+  }
+
+  @override
+  void dispose() {
+    _likeAnimationController.dispose();
+    super.dispose();
   }
 
   @override
@@ -175,9 +185,11 @@ class _PostDisplayState extends State<PostDisplay>
                     child: Container(),
                   ),
                   InkWell(
-                    onTap: () {},
-                    child:
-                        SvgPicture.asset('assets/icons/post/save_outlined.svg'),
+                    onTap: widget.saveUnSavePost,
+                    child: widget.saved
+                        ? SvgPicture.asset('assets/icons/post/save_filled.svg')
+                        : SvgPicture.asset(
+                            'assets/icons/post/save_outlined.svg'),
                   ),
                 ],
               ),

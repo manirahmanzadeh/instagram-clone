@@ -13,6 +13,7 @@
       "caption" : "A good day with my friend Parsa. love you so much bro...",
       "is_slide" : true,
       "liked" : false,
+      "saved" : true,
       "medias" : [
         {
           "file" : {
@@ -46,6 +47,7 @@
       "caption" : "A good day with my friend Parsa. love you so much bro...",
       "is_slide" : true,
       "liked" : true,
+      "saved" : false,
       "medias" : [
         {
           "file" : {

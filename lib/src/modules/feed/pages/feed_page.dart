@@ -79,6 +79,8 @@ class _FeedPage extends StatelessWidget {
                         indicatorsDisplayed: provider.indicatorsDisplayed,
                         displayIndicators: staticProvider.displayIndicators,
                         likeUnlikePost: () => staticProvider.likeUnlikePost(item),
+                        saveUnSavePost: () => staticProvider.saveUnSavePost(item),
+                        saved: item.saved,
                       ),
                     ),
                   ],
@@ -94,6 +96,8 @@ class _FeedPage extends StatelessWidget {
                   indicatorsDisplayed: provider.indicatorsDisplayed,
                   displayIndicators: staticProvider.displayIndicators,
                   likeUnlikePost: () => staticProvider.likeUnlikePost(item),
+                  saveUnSavePost: () => staticProvider.saveUnSavePost(item),
+                  saved: item.saved,
                 ),
               );
             },

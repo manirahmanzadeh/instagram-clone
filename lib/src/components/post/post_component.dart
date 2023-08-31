@@ -14,14 +14,18 @@ class PostComponent extends StatelessWidget {
     required this.displayIndicators,
     required this.likeUnlikePost,
     required this.liked,
+    required this.saved,
+    required this.saveUnSavePost,
   }) : super(key: key);
   final PostModel post;
   final void Function() muteUnMute;
   final bool soundOpen;
   final bool liked;
+  final bool saved;
   final bool indicatorsDisplayed;
   final Future<void> Function() displayIndicators;
   final Future<void> Function() likeUnlikePost;
+  final Future<void> Function() saveUnSavePost;
 
   @override
   Widget build(BuildContext context) {
@@ -63,7 +67,9 @@ class PostComponent extends StatelessWidget {
           displayIndicators: displayIndicators,
           indicatorsDisplayed: indicatorsDisplayed,
           likeUnlikePost: likeUnlikePost,
+          saveUnSavePost: saveUnSavePost,
           liked: liked,
+          saved: saved,
         ),
         Padding(
           padding: const EdgeInsets.symmetric(horizontal: 16),

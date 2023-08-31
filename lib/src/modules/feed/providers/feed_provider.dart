@@ -105,4 +105,14 @@ class FeedProvider extends SafeProvider with ErrorHandler {
     }
   }
 
+  Future<void> saveUnSavePost(PostModel item) async {
+    try {
+      item.saved = !item.saved;
+      notifyListeners();
+      await _postApi.save(item.id);
+    } on ApiError catch (e) {
+      showError(context, e);
+    }
+  }
+
 }
