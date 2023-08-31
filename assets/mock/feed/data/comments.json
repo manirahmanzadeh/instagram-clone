@@ -1,0 +1,36 @@
+
+{
+  "comments" : [
+    {
+      "id" : "0",
+      "username" : "mani.rahmanzade",
+      "user_avatar" : {
+        "file" : "assets/mock/feed/images/me.png"
+      },
+      "likes_number" : 335,
+      "text" : "A good day with my friend Parsa. love you so much bro...",
+      "liked" : false
+    },
+    {
+      "id" : "1",
+      "username" : "mani.rahmanzade",
+      "user_avatar" : {
+        "file" : "assets/mock/feed/images/me.png"
+      },
+      "likes_number" : 335,
+      "text" : "A good day with my friend Parsa. love you so much bro...",
+      "liked" : false
+    },
+    {
+      "id" : "2",
+      "username" : "mani.rahmanzade",
+      "user_avatar" : {
+        "file" : "assets/mock/feed/images/me.png"
+      },
+      "likes_number" : 335,
+      "text" : "A good day with my friend Parsa. love you so much bro...",
+      "liked" : false
+    }
+  ],
+  "total_results" : 3
+}

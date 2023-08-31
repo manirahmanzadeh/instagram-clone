@@ -69,7 +69,7 @@ class FeedProvider extends SafeProvider with ErrorHandler {
       final response = await _usersApi.getShareList(
         offset: pageKey,
       );
-      final newItems = response.posts;
+      final newItems = response.users;
       if ((pageKey + newItems.length) == response.totalResult) {
         shareListPagingController.appendLastPage(newItems);
       } else {

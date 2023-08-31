@@ -5,6 +5,7 @@ import 'package:infinite_scroll_pagination/infinite_scroll_pagination.dart';
 import 'package:instagram_clone/src/components/post/display/image_display.dart';
 import 'package:instagram_clone/src/components/post/share_list/share_list_bottomsheet.dart';
 import 'package:instagram_clone/src/models/post/media_model.dart';
+import 'package:vrouter/vrouter.dart';
 
 import '../../../models/users/share_user_model.dart';
 import '../indicators/post_indicators.dart';
@@ -24,7 +25,9 @@ class PostDisplay extends StatefulWidget {
     required this.saveUnSavePost,
     required this.refreshUsers,
     required this.usersPagingController,
+    required this.postId,
   }) : super(key: key);
+  final String postId;
   final List<MediaModel> medias;
   final void Function() muteUnMute;
   final bool soundOpen;
@@ -178,15 +181,19 @@ class _PostDisplayState extends State<PostDisplay>
                     width: 15,
                   ),
                   InkWell(
-                    onTap: () {},
-                    child: SvgPicture.asset('assets/icons/post/comment.svg'),
+                    onTap: openComments,
+                    child: SvgPicture.asset(
+                      'assets/icons/post/comment.svg',
+                    ),
                   ),
                   const SizedBox(
                     width: 15,
                   ),
                   InkWell(
                     onTap: () => send(context),
-                    child: SvgPicture.asset('assets/icons/post/send.svg'),
+                    child: SvgPicture.asset(
+                      'assets/icons/post/send.svg',
+                    ),
                   ),
                   Expanded(
                     child: Container(),
@@ -194,9 +201,12 @@ class _PostDisplayState extends State<PostDisplay>
                   InkWell(
                     onTap: widget.saveUnSavePost,
                     child: widget.saved
-                        ? SvgPicture.asset('assets/icons/post/save_filled.svg')
+                        ? SvgPicture.asset(
+                            'assets/icons/post/save_filled.svg',
+                          )
                         : SvgPicture.asset(
-                            'assets/icons/post/save_outlined.svg'),
+                            'assets/icons/post/save_outlined.svg',
+                          ),
                   ),
                 ],
               ),
@@ -234,5 +244,9 @@ class _PostDisplayState extends State<PostDisplay>
         refreshUsers: widget.refreshUsers,
       ),
     );
+  }
+
+  void openComments() {
+    context.vRouter.to('comments/${widget.postId}');
   }
 }

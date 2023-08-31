@@ -15,8 +15,6 @@ class PostComponent extends StatelessWidget {
     required this.indicatorsDisplayed,
     required this.displayIndicators,
     required this.likeUnlikePost,
-    required this.liked,
-    required this.saved,
     required this.saveUnSavePost,
     required this.usersPagingController,
     required this.refreshUsers,
@@ -24,8 +22,6 @@ class PostComponent extends StatelessWidget {
   final PostModel post;
   final void Function() muteUnMute;
   final bool soundOpen;
-  final bool liked;
-  final bool saved;
   final bool indicatorsDisplayed;
   final Future<void> Function() displayIndicators;
   final Future<void> Function() likeUnlikePost;
@@ -74,10 +70,11 @@ class PostComponent extends StatelessWidget {
           indicatorsDisplayed: indicatorsDisplayed,
           likeUnlikePost: likeUnlikePost,
           saveUnSavePost: saveUnSavePost,
-          liked: liked,
-          saved: saved,
+          liked: post.liked,
+          saved: post.saved,
           refreshUsers: refreshUsers,
           usersPagingController: usersPagingController,
+          postId: post.id,
         ),
         Padding(
           padding: const EdgeInsets.symmetric(horizontal: 16),
