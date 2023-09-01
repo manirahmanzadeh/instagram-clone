@@ -52,9 +52,7 @@ class _CommentsPage extends StatelessWidget {
                     return ListTile(
                       leading: UserAvatar(
                         size: 40,
-                        image: item.user.userAvatar,
-                        newStory: item.user.newStory,
-                        hasStory: item.user.hasStory,
+                        user: item.user,
                       ),
                       title: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,

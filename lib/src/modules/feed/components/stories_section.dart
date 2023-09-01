@@ -34,9 +34,7 @@ class StoriesSection extends StatelessWidget {
                                 const EdgeInsets.symmetric(horizontal: 6.5),
                             child: UserAvatar(
                               size: 73,
-                              image: e.userAvatar,
-                              hasStory: e.hasStory,
-                              newStory: e.newStory,
+                              user: e,
                             ),
                           ),
                         )

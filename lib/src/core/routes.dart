@@ -2,6 +2,7 @@ import 'package:instagram_clone/src/modules/comments/pages/comments_page.dart';
 import 'package:vrouter/vrouter.dart';
 
 import '../modules/feed/pages/feed_page.dart';
+import '../modules/story/pages/stories_page.dart';
 
 class Routes {
   static List<VRouteElement> get routes {
@@ -32,6 +33,10 @@ class Routes {
                 VWidget(
                   path: 'comments/:post_id',
                   widget: const CommentsPage(),
+                ),
+                VWidget(
+                  path: 'stories/:user_id',
+                  widget: const StoriesPage(),
                 ),
               ],
             ),

@@ -1,45 +1,63 @@
 import 'package:flutter/material.dart';
-import '../models/file_model.dart';
+import 'package:instagram_clone/src/models/users/user_model.dart';
+import 'package:vrouter/vrouter.dart';
 
-class UserAvatar extends StatelessWidget {
+class UserAvatar extends StatefulWidget {
   const UserAvatar({
     Key? key,
     required this.size,
-    required this.image,
-    required this.hasStory,
-    required this.newStory,
+    required this.user,
   }) : super(key: key);
   final double size;
-  final FileModel image;
-  final bool hasStory;
-  final bool newStory;
+  final UserModel user;
+
+  @override
+  State<UserAvatar> createState() => _UserAvatarState();
+}
+
+class _UserAvatarState extends State<UserAvatar> {
+  bool openingStory = false;
+
+  Future<void> openStories() async {
+    setState(() {
+      openingStory = true;
+    });
+    await Future.delayed(const Duration(seconds: 2));
+    setState(() {
+      openingStory = false;
+    });
+    context.vRouter.to('stories/${widget.user.id}');
+  }
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      height: size,
-      width: size,
-      child: Stack(
-        alignment: Alignment.center,
-        children: [
-          if (hasStory)
-            SizedBox(
-              height: size,
-              width: size,
-              child: CircularProgressIndicator(
-                value: 1,
-                color: newStory ?Colors.red :Colors.black26,
-                strokeWidth: 3,
+    return GestureDetector(
+      onTap: openStories,
+      child: SizedBox(
+        height: widget.size,
+        width: widget.size,
+        child: Stack(
+          alignment: Alignment.center,
+          children: [
+            if (widget.user.hasStory)
+              SizedBox(
+                height: widget.size,
+                width: widget.size,
+                child: CircularProgressIndicator(
+                  value: openingStory ? null : 1,
+                  color: widget.user.newStory ? Colors.red.withOpacity(0.7) : Colors.black26,
+                  strokeWidth: 3,
+                ),
               ),
-            ),
-          Padding(
-            padding: EdgeInsets.all(size * 5 / 100),
-            child: CircleAvatar(
-              backgroundImage: AssetImage(image.file),
-              radius: double.maxFinite,
-            ),
-          )
-        ],
+            Padding(
+              padding: EdgeInsets.all(widget.size * 5 / 100),
+              child: CircleAvatar(
+                backgroundImage: AssetImage(widget.user.userAvatar.file),
+                radius: double.maxFinite,
+              ),
+            )
+          ],
+        ),
       ),
     );
   }

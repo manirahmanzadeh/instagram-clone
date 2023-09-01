@@ -5,11 +5,11 @@ import 'package:instagram_clone/src/models/users/user_model.dart';
 class ShareUserComponent extends StatelessWidget {
   const ShareUserComponent({
     Key? key,
-    required this.userModel,
+    required this.user,
     required this.addToShare,
     required this.selected,
   }) : super(key: key);
-  final UserModel userModel;
+  final UserModel user;
   final bool selected;
   final Function() addToShare;
 
@@ -18,15 +18,13 @@ class ShareUserComponent extends StatelessWidget {
     return ListTile(
       leading: UserAvatar(
         size: 40,
-        image: userModel.userAvatar,
-        newStory: userModel.newStory,
-        hasStory: userModel.hasStory,
+        user: user,
       ),
       onTap: addToShare,
       title: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          Text(userModel.name),
+          Text(user.name),
           selected
               ? const Icon(
                   Icons.check_circle,
@@ -35,7 +33,7 @@ class ShareUserComponent extends StatelessWidget {
               : const Icon(Icons.circle_outlined)
         ],
       ),
-      subtitle: Text(userModel.username),
+      subtitle: Text(user.username),
     );
   }
 }

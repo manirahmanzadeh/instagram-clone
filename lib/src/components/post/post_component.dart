@@ -43,9 +43,7 @@ class PostComponent extends StatelessWidget {
             children: [
               UserAvatar(
                 size: 41,
-                image: post.user.userAvatar,
-                hasStory: post.user.hasStory,
-                newStory: post.user.newStory,
+                user: post.user,
               ),
               const SizedBox(
                 width: 5,

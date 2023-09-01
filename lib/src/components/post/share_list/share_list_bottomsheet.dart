@@ -100,7 +100,7 @@ class _ShareListBottomSheetState extends State<ShareListBottomSheet> {
                           mainAxisSize: MainAxisSize.min,
                           children: [
                             ShareUserComponent(
-                              userModel: item,
+                              user: item,
                               addToShare: () => addToShareList(item),
                               selected: shareList
                                   .any((element) => element.id == item.id),
@@ -112,7 +112,7 @@ class _ShareListBottomSheetState extends State<ShareListBottomSheet> {
                         );
                       }
                       return ShareUserComponent(
-                        userModel: item,
+                        user: item,
                         addToShare: () => addToShareList(item),
                         selected:
                             shareList.any((element) => element.id == item.id),
