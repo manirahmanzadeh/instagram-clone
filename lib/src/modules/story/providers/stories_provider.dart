@@ -44,6 +44,7 @@ class StoriesProvider extends SafeProvider with ErrorHandler {
   void onStoryChanged(int index, CarouselPageChangedReason reason) {
     storyIndex = index;
     notifyListeners();
+    storyTimer!.cancel();
     startStoryTimer();
   }
 
