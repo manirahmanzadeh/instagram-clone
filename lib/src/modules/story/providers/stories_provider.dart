@@ -50,6 +50,7 @@ class StoriesProvider extends SafeProvider with ErrorHandler {
       showError(context, e);
     }
     isLoadingStories = false;
+    user.stories.first.seen = true;
     notifyListeners();
     startStoryTimer();
   }
@@ -57,6 +58,7 @@ class StoriesProvider extends SafeProvider with ErrorHandler {
   int storyIndex = 0;
   void onStoryChanged(int index, CarouselPageChangedReason reason) {
     storyIndex = index;
+    user.stories[index].seen = true;
     notifyListeners();
     storyTimer!.cancel();
     startStoryTimer();

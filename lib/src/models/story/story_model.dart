@@ -3,7 +3,7 @@ import 'package:instagram_clone/src/models/media_model.dart';
 class StoryModel {
   final String id;
   final MediaModel media;
-  final bool seen;
+  bool seen;
 
   StoryModel({
     required this.id,
