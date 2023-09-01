@@ -1,0 +1,114 @@
+
+{
+  "comments" : [
+    {
+      "id" : "0",
+      "user" : {
+        "id" : "0",
+        "username" : "mani.rahmanzade",
+        "name" : "Mani Rahmanzadeh",
+        "user_avatar" : {
+          "file" : "assets/mock/feed/images/me.png"
+        },
+        "stories" : [
+          {
+            "id" : "0",
+            "media" : {
+              "file" : {
+                "file" : "assets/mock/feed/images/post.jpg"
+              },
+              "type" : "image"
+            },
+            "seen" : false
+          },
+          {
+            "id" : "0",
+            "media" : {
+              "file" : {
+                "file" : "assets/mock/feed/images/post.jpg"
+              },
+              "type" : "image"
+            },
+            "seen" : false
+          }
+        ]
+      },
+      "likes_number" : 335,
+      "text" : "A good day with my friend Parsa. love you so much bro...",
+      "liked" : false
+    },
+    {
+      "id" : "1",
+      "user" : {
+        "id" : "0",
+        "username" : "mani.rahmanzade",
+        "name" : "Mani Rahmanzadeh",
+        "user_avatar" : {
+          "file" : "assets/mock/feed/images/me.png"
+        },
+        "stories" : [
+          {
+            "id" : "0",
+            "media" : {
+              "file" : {
+                "file" : "assets/mock/feed/images/post.jpg"
+              },
+              "type" : "image"
+            },
+            "seen" : false
+          },
+          {
+            "id" : "0",
+            "media" : {
+              "file" : {
+                "file" : "assets/mock/feed/images/post.jpg"
+              },
+              "type" : "image"
+            },
+            "seen" : false
+          }
+        ]
+      },
+      "likes_number" : 335,
+      "text" : "A good day with my friend Parsa. love you so much bro...",
+      "liked" : false
+    },
+    {
+      "id" : "2",
+      "user" : {
+        "id" : "0",
+        "username" : "mani.rahmanzade",
+        "name" : "Mani Rahmanzadeh",
+        "user_avatar" : {
+          "file" : "assets/mock/feed/images/me.png"
+        },
+        "stories" : [
+          {
+            "id" : "0",
+            "media" : {
+              "file" : {
+                "file" : "assets/mock/feed/images/post.jpg"
+              },
+              "type" : "image"
+            },
+            "seen" : false
+          },
+          {
+            "id" : "0",
+            "media" : {
+              "file" : {
+                "file" : "assets/mock/feed/images/post.jpg"
+              },
+              "type" : "image"
+            },
+            "seen" : false
+          }
+        ]
+      },
+      "likes_number" : 335,
+      "text" : "A good day with my friend Parsa. love you so much bro...",
+      "liked" : false
+    }
+  ],
+  "total_results" : 3
+}
