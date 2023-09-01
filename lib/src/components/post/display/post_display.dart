@@ -25,7 +25,7 @@ class PostDisplay extends StatefulWidget {
     required this.saveUnSavePost,
     required this.refreshUsers,
     required this.usersPagingController,
-    required this.postId,
+    required this.postId, required this.postAspectRatio,
   }) : super(key: key);
   final String postId;
   final List<MediaModel> medias;
@@ -39,6 +39,7 @@ class PostDisplay extends StatefulWidget {
   final Future<void> Function() saveUnSavePost;
   final void Function() refreshUsers;
   final PagingController<int, ShareUserModel> usersPagingController;
+  final double postAspectRatio;
 
   @override
   State<PostDisplay> createState() => _PostDisplayState();
@@ -116,7 +117,8 @@ class _PostDisplayState extends State<PostDisplay>
                     options: CarouselOptions(
                       viewportFraction: 1.0,
                       enlargeCenterPage: false,
-                      height: 357,
+
+                      aspectRatio: widget.postAspectRatio,
                       enableInfiniteScroll: false,
                       onPageChanged: (index, reason) {
                         setState(() {

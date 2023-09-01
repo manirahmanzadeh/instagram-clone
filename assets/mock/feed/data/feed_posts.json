@@ -14,6 +14,7 @@
       "is_slide" : true,
       "liked" : false,
       "saved" : true,
+      "aspect_ratio": 1.91,
       "medias" : [
         {
           "file" : {
@@ -48,6 +49,30 @@
       "is_slide" : true,
       "liked" : true,
       "saved" : false,
+      "aspect_ratio": 1.0,
+      "medias" : [
+        {
+          "file" : {
+            "file" : "assets/mock/feed/videos/video_4.mp4"
+          },
+          "type" : "video"
+        }
+      ]
+    },
+    {
+      "id" : "1",
+      "username" : "mani.rahmanzade",
+      "user_avatar" : {
+        "file" : "assets/mock/feed/images/me.png"
+      },
+      "likes_number" : 335,
+      "comments_number" : 56,
+      "people_liked" : ["parsa", "jafar", "akbar"],
+      "caption" : "A good day with my friend Parsa. love you so much bro...",
+      "is_slide" : true,
+      "liked" : true,
+      "saved" : false,
+      "aspect_ratio": 0.8,
       "medias" : [
         {
           "file" : {
@@ -58,5 +83,5 @@
       ]
     }
   ],
-  "total_results" : 2
+  "total_results" : 3
 }

@@ -75,6 +75,7 @@ class PostComponent extends StatelessWidget {
           refreshUsers: refreshUsers,
           usersPagingController: usersPagingController,
           postId: post.id,
+          postAspectRatio: post.aspectRatio,
         ),
         Padding(
           padding: const EdgeInsets.symmetric(horizontal: 16),

@@ -51,7 +51,7 @@ class _VideoDisplayState extends State<VideoDisplay> {
   }
 
   Future<void> muteUnMute() async {
-    if(widget.soundIndicatorDisplay){
+    if (widget.soundIndicatorDisplay) {
       await controller?.setVolume(widget.soundOpen ? 0 : 1);
     }
     widget.muteUnMute();
@@ -61,22 +61,19 @@ class _VideoDisplayState extends State<VideoDisplay> {
   Widget build(BuildContext context) {
     return InkWell(
       onTap: muteUnMute,
-      child: SizedBox(
-        height: 357,
-        child: controller == null
-            ? const Center(child: CircularProgressIndicator())
-            : Stack(
-                alignment: Alignment.bottomRight,
-                children: [
-                  VideoPlayer(controller!),
-                  AnimatedOpacity(
-                    opacity: widget.soundIndicatorDisplay ? 1 : 0,
-                    duration: const Duration(milliseconds: 350),
-                    child: SoundIndicator(soundOn: widget.soundOpen),
-                  ),
-                ],
-              ),
-      ),
+      child: controller == null
+          ? const Center(child: CircularProgressIndicator())
+          : Stack(
+              alignment: Alignment.bottomRight,
+              children: [
+                VideoPlayer(controller!),
+                AnimatedOpacity(
+                  opacity: widget.soundIndicatorDisplay ? 1 : 0,
+                  duration: const Duration(milliseconds: 350),
+                  child: SoundIndicator(soundOn: widget.soundOpen),
+                ),
+              ],
+            ),
     );
   }
 }
