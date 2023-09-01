@@ -1,3 +1,4 @@
+import 'package:expandable_text/expandable_text.dart';
 import 'package:flutter/material.dart';
 import 'package:infinite_scroll_pagination/infinite_scroll_pagination.dart';
 import 'package:instagram_clone/src/components/user_avatar.dart';
@@ -114,25 +115,13 @@ class PostComponent extends StatelessWidget {
         ),
         Padding(
           padding: const EdgeInsets.symmetric(horizontal: 16),
-          child: Row(
+          child: Wrap(
             children: [
-              Expanded(
-                child: RichText(
-                  text: TextSpan(
-                    text: '',
-                    style: Theme.of(context).textTheme.bodyMedium,
-                    children: <TextSpan>[
-                      TextSpan(
-                        text: '${post.username} ',
-                        style: const TextStyle(fontWeight: FontWeight.bold),
-                      ),
-                      TextSpan(
-                        text: post.caption,
-                      ),
-                    ],
-                  ),
-                ),
+              Text(
+                '${post.username} ',
+                style: const TextStyle(fontWeight: FontWeight.bold),
               ),
+              ExpandableText(post.caption, expandText: 'more', collapseText: 'less'),
             ],
           ),
         ),
