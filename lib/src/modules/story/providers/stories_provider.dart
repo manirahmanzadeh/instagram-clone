@@ -1,8 +1,11 @@
 import 'dart:async';
+import 'package:carousel_slider/carousel_controller.dart';
+import 'package:carousel_slider/carousel_options.dart';
 import 'package:flutter/material.dart';
 import 'package:instagram_clone/src/core/safe_provider.dart';
 import 'package:instagram_clone/src/models/users/user_model.dart';
 import 'package:instagram_clone/src/modules/story/api/stories_api.dart';
+import 'package:vrouter/vrouter.dart';
 import '../../../utils/error_handler.dart';
 import '../../../utils/error_template.dart';
 
@@ -34,6 +37,55 @@ class StoriesProvider extends SafeProvider with ErrorHandler {
     }
     isLoadingStories = false;
     notifyListeners();
+    startStoryTimer();
   }
 
+  int storyIndex = 0;
+  void onStoryChanged(int index, CarouselPageChangedReason reason) {
+    storyIndex = index;
+    notifyListeners();
+    startStoryTimer();
+  }
+
+  final CarouselController storiesController = CarouselController();
+
+  Timer? storyTimer;
+  double storyProgressValue = 0;
+  void startStoryTimer(){
+    storyProgressValue = 0;
+    notifyListeners();
+    storyTimer?.cancel();
+     storyTimer = Timer.periodic(const Duration(seconds: 1), (timer) {
+       if (storyProgressValue < 1) {
+         storyProgressValue += 1/15;
+         notifyListeners();
+         if(storyProgressValue >= 1){
+           if(storyIndex + 1 < user.stories.length){
+             storyTimer!.cancel();
+             storiesController.nextPage();
+           } else {
+             storyTimer!.cancel();
+             context.vRouter.pop();
+           }
+         }
+       }
+     });
+  }
+
+  @override
+  void dispose() {
+    storyTimer?.cancel();
+    super.dispose();
+  }
+
+
+  void nextStory() {
+    if(storyIndex + 1 < user.stories.length){
+      storyTimer!.cancel();
+      storiesController.nextPage();
+    } else {
+      storyTimer!.cancel();
+      context.vRouter.pop();
+    }
+  }
 }

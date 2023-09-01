@@ -40,10 +40,19 @@ class _StoriesPage extends StatelessWidget {
               )
             : Stack(
                 children: [
-                  StoryDisplay(
-                    stories: provider.user.stories,
+                  GestureDetector(
+                    onTap: staticProvider.nextStory,
+                    child: StoryDisplay(
+                      stories: provider.user.stories,
+                      storiesController: staticProvider.storiesController,
+                      onStoryChanged: staticProvider.onStoryChanged,
+                    ),
                   ),
-                  const StoryIndicators(),
+                  StoryIndicators(
+                    storiesNumber: staticProvider.user.stories.length,
+                    storyIndex: provider.storyIndex,
+                    storyProgressValue: provider.storyProgressValue,
+                  ),
                 ],
               ),
       ),
