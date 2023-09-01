@@ -1,6 +1,7 @@
 import 'dart:async';
 import 'package:carousel_slider/carousel_controller.dart';
 import 'package:carousel_slider/carousel_options.dart';
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:instagram_clone/src/core/safe_provider.dart';
 import 'package:instagram_clone/src/models/users/user_model.dart';
@@ -14,6 +15,19 @@ class StoriesProvider extends SafeProvider with ErrorHandler {
   final String userId;
   late final UserModel user;
   bool isLoadingStories = true;
+  bool indicatorsVisible = true;
+
+  void showIndicators (LongPressEndDetails details) {
+    indicatorsVisible = true;
+    notifyListeners();
+    resumeStoryTimer();
+  }
+
+  void hideIndicators (LongPressStartDetails details) {
+    indicatorsVisible = false;
+    notifyListeners();
+    storyTimer?.cancel();
+  }
 
   final _storiesApi = StoriesApiMock();
 
@@ -57,6 +71,25 @@ class StoriesProvider extends SafeProvider with ErrorHandler {
     notifyListeners();
     storyTimer?.cancel();
      storyTimer = Timer.periodic(const Duration(seconds: 1), (timer) {
+       if (storyProgressValue < 1) {
+         storyProgressValue += 1/15;
+         notifyListeners();
+         if(storyProgressValue >= 1){
+           if(storyIndex + 1 < user.stories.length){
+             storyTimer!.cancel();
+             storiesController.nextPage();
+           } else {
+             storyTimer!.cancel();
+             context.vRouter.pop();
+           }
+         }
+       }
+     });
+  }
+
+  void resumeStoryTimer(){
+    storyProgressValue += 1/15;
+    storyTimer = Timer.periodic(const Duration(seconds: 1), (timer) {
        if (storyProgressValue < 1) {
          storyProgressValue += 1/15;
          notifyListeners();

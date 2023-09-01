@@ -42,16 +42,22 @@ class _StoriesPage extends StatelessWidget {
                 children: [
                   GestureDetector(
                     onTap: staticProvider.nextStory,
+                    onLongPressStart: staticProvider.hideIndicators,
+                    onLongPressEnd: staticProvider.showIndicators,
                     child: StoryDisplay(
                       stories: provider.user.stories,
                       storiesController: staticProvider.storiesController,
                       onStoryChanged: staticProvider.onStoryChanged,
                     ),
                   ),
-                  StoryIndicators(
-                    storiesNumber: staticProvider.user.stories.length,
-                    storyIndex: provider.storyIndex,
-                    storyProgressValue: provider.storyProgressValue,
+                  AnimatedOpacity(
+                    opacity: provider.indicatorsVisible ? 1 : 0,
+                    duration: const Duration(milliseconds: 350),
+                    child: StoryIndicators(
+                      user: staticProvider.user,
+                      storyIndex: provider.storyIndex,
+                      storyProgressValue: provider.storyProgressValue,
+                    ),
                   ),
                 ],
               ),

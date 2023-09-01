@@ -7,9 +7,11 @@ class UserAvatar extends StatefulWidget {
     Key? key,
     required this.size,
     required this.user,
+    this.showStoryIndicator = true,
   }) : super(key: key);
   final double size;
   final UserModel user;
+  final bool showStoryIndicator;
 
   @override
   State<UserAvatar> createState() => _UserAvatarState();
@@ -39,7 +41,7 @@ class _UserAvatarState extends State<UserAvatar> {
         child: Stack(
           alignment: Alignment.center,
           children: [
-            if (widget.user.hasStory)
+            if (widget.user.hasStory && widget.showStoryIndicator)
               SizedBox(
                 height: widget.size,
                 width: widget.size,
