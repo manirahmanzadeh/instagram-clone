@@ -1,7 +1,6 @@
 import 'dart:convert';
-
 import 'package:flutter/services.dart';
-import 'package:instagram_clone/src/models/story/story_model.dart';
+import 'package:instagram_clone/src/models/users/user_model.dart';
 import 'package:instagram_clone/src/modules/feed/models/feed_response_model.dart';
 
 abstract class FeedApi {
@@ -12,7 +11,7 @@ abstract class FeedApi {
     throw UnimplementedError();
   }
 
-  Future<List<StoryModel>> fetchStories();
+  Future<List<UserModel>> fetchStories();
 }
 
 class FeedApiMock implements FeedApi {
@@ -29,13 +28,13 @@ class FeedApiMock implements FeedApi {
   }
 
   @override
-  Future<List<StoryModel>> fetchStories() async {
+  Future<List<UserModel>> fetchStories() async {
     await Future.delayed(const Duration(seconds: 1));
     final response =
         await rootBundle.loadString('assets/mock/feed/data/feed_stories.json');
     final data = jsonDecode(response) as Map<String, dynamic>;
     return (data['stories'] as List)
-        .map((e) => StoryModel.fromJson(e as Map<String, dynamic>))
+        .map((e) => UserModel.fromJson(e as Map<String, dynamic>))
         .toList();
   }
 }

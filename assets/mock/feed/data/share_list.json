@@ -1,36 +1,124 @@
 {
   "users": [
     {
-      "id": "0",
-      "username": "mani.rahmanzade",
-      "user_avatar": {
-        "file": "assets/mock/feed/images/me.png"
+      "id" : "0",
+      "username" : "mani.rahmanzade",
+      "name" : "Mani Rahmanzadeh",
+      "user_avatar" : {
+        "file" : "assets/mock/feed/images/me.png"
       },
-      "name": "Mani Rahmanzadeh"
+      "stories" : [
+        {
+          "id" : "0",
+          "media" : {
+            "file" : {
+              "file" : "assets/mock/feed/images/post.jpg"
+            },
+            "type" : "image"
+          },
+          "seen" : false
+        },
+        {
+          "id" : "0",
+          "media" : {
+            "file" : {
+              "file" : "assets/mock/feed/images/post.jpg"
+            },
+            "type" : "image"
+          },
+          "seen" : false
+        }
+      ]
     },
     {
-      "id": "1",
-      "username": "mani.rahmanzade",
-      "user_avatar": {
-        "file": "assets/mock/feed/images/me.png"
+      "id" : "1",
+      "username" : "mani.rahmanzade",
+      "name" : "Mani Rahmanzadeh",
+      "user_avatar" : {
+        "file" : "assets/mock/feed/images/me.png"
       },
-      "name": "Mani Rahmanzadeh"
+      "stories" : [
+        {
+          "id" : "0",
+          "media" : {
+            "file" : {
+              "file" : "assets/mock/feed/images/post.jpg"
+            },
+            "type" : "image"
+          },
+          "seen" : false
+        },
+        {
+          "id" : "0",
+          "media" : {
+            "file" : {
+              "file" : "assets/mock/feed/images/post.jpg"
+            },
+            "type" : "image"
+          },
+          "seen" : false
+        }
+      ]
     },
     {
-      "id": "2",
-      "username": "mani.rahmanzade",
-      "user_avatar": {
-        "file": "assets/mock/feed/images/me.png"
+      "id" : "2",
+      "username" : "mani.rahmanzade",
+      "name" : "Mani Rahmanzadeh",
+      "user_avatar" : {
+        "file" : "assets/mock/feed/images/me.png"
       },
-      "name": "Mani Rahmanzadeh"
+      "stories" : [
+        {
+          "id" : "0",
+          "media" : {
+            "file" : {
+              "file" : "assets/mock/feed/images/post.jpg"
+            },
+            "type" : "image"
+          },
+          "seen" : false
+        },
+        {
+          "id" : "0",
+          "media" : {
+            "file" : {
+              "file" : "assets/mock/feed/images/post.jpg"
+            },
+            "type" : "image"
+          },
+          "seen" : false
+        }
+      ]
     },
     {
-      "id": "3",
-      "username": "mani.rahmanzade",
-      "user_avatar": {
-        "file": "assets/mock/feed/images/me.png"
+      "id" : "3",
+      "username" : "mani.rahmanzade",
+      "name" : "Mani Rahmanzadeh",
+      "user_avatar" : {
+        "file" : "assets/mock/feed/images/me.png"
       },
-      "name": "Mani Rahmanzadeh"
+      "stories" : [
+        {
+          "id" : "0",
+          "media" : {
+            "file" : {
+              "file" : "assets/mock/feed/images/post.jpg"
+            },
+            "type" : "image"
+          },
+          "seen" : false
+        },
+        {
+          "id" : "0",
+          "media" : {
+            "file" : {
+              "file" : "assets/mock/feed/images/post.jpg"
+            },
+            "type" : "image"
+          },
+          "seen" : false
+        }
+      ]
     }
   ],
   "total_results": 4

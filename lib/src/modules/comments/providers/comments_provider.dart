@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:infinite_scroll_pagination/infinite_scroll_pagination.dart';
 import 'package:instagram_clone/src/core/safe_provider.dart';
 import 'package:instagram_clone/src/models/file_model.dart';
+import 'package:instagram_clone/src/models/users/user_model.dart';
 import 'package:instagram_clone/src/modules/comments/api/comments_api.dart';
 import 'package:instagram_clone/src/modules/comments/models/comment_model.dart';
 
@@ -83,8 +84,7 @@ class CommentsProvider extends SafeProvider with ErrorHandler {
         commentsPagingController.itemList!.add(
           CommentModel(
             id: '0',
-            username: 'mani.rahmanzadeh',
-            userAvatar: const FileModel(file: 'assets/mock/feed/images/me.png'),
+            user: UserModel(id: "0", username: "mani.rahmanzadeh", name: "Mani Rahmanzadeh", userAvatar: const FileModel(file: 'assets/mock/feed/images/me.png'), stories: []),
             text: commentText,
             likesNumber: 0,
             liked: false,

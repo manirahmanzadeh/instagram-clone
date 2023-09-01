@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:instagram_clone/src/models/users/user_model.dart';
 
 import '../../../components/user_avatar.dart';
-import '../../../models/story/story_model.dart';
 import 'my_story_holder.dart';
 
 class StoriesSection extends StatelessWidget {
   const StoriesSection(
       {Key? key, required this.stories, required this.isLoading})
       : super(key: key);
-  final List<StoryModel> stories;
+  final List<UserModel> stories;
   final bool isLoading;
 
   @override
@@ -32,7 +32,12 @@ class StoriesSection extends StatelessWidget {
                           (e) => Padding(
                             padding:
                                 const EdgeInsets.symmetric(horizontal: 6.5),
-                            child: UserAvatar(size: 73, image: e.userAvatar),
+                            child: UserAvatar(
+                              size: 73,
+                              image: e.userAvatar,
+                              hasStory: e.hasStory,
+                              newStory: e.newStory,
+                            ),
                           ),
                         )
                         .toList(),

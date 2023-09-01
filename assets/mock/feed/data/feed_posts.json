@@ -3,9 +3,35 @@
   "posts" : [
     {
       "id" : "0",
-      "username" : "mani.rahmanzade",
-      "user_avatar" : {
-        "file" : "assets/mock/feed/images/me.png"
+      "user" : {
+        "id" : "0",
+        "username" : "mani.rahmanzade",
+        "name" : "Mani Rahmanzadeh",
+        "user_avatar" : {
+          "file" : "assets/mock/feed/images/me.png"
+        },
+        "stories" : [
+          {
+            "id" : "0",
+            "media" : {
+              "file" : {
+                "file" : "assets/mock/feed/images/post.jpg"
+              },
+              "type" : "image"
+            },
+            "seen" : false
+          },
+          {
+            "id" : "0",
+            "media" : {
+              "file" : {
+                "file" : "assets/mock/feed/images/post.jpg"
+              },
+              "type" : "image"
+            },
+            "seen" : false
+          }
+        ]
       },
       "likes_number" : 335,
       "comments_number" : 56,
@@ -38,9 +64,35 @@
     },
     {
       "id" : "1",
-      "username" : "mani.rahmanzade",
-      "user_avatar" : {
-        "file" : "assets/mock/feed/images/me.png"
+      "user" : {
+        "id" : "0",
+        "username" : "mani.rahmanzade",
+        "name" : "Mani Rahmanzadeh",
+        "user_avatar" : {
+          "file" : "assets/mock/feed/images/me.png"
+        },
+        "stories" : [
+          {
+            "id" : "0",
+            "media" : {
+              "file" : {
+                "file" : "assets/mock/feed/images/post.jpg"
+              },
+              "type" : "image"
+            },
+            "seen" : false
+          },
+          {
+            "id" : "0",
+            "media" : {
+              "file" : {
+                "file" : "assets/mock/feed/images/post.jpg"
+              },
+              "type" : "image"
+            },
+            "seen" : false
+          }
+        ]
       },
       "likes_number" : 335,
       "comments_number" : 56,
@@ -61,9 +113,35 @@
     },
     {
       "id" : "1",
-      "username" : "mani.rahmanzade",
-      "user_avatar" : {
-        "file" : "assets/mock/feed/images/me.png"
+      "user" : {
+        "id" : "0",
+        "username" : "mani.rahmanzade",
+        "name" : "Mani Rahmanzadeh",
+        "user_avatar" : {
+          "file" : "assets/mock/feed/images/me.png"
+        },
+        "stories" : [
+          {
+            "id" : "0",
+            "media" : {
+              "file" : {
+                "file" : "assets/mock/feed/images/post.jpg"
+              },
+              "type" : "image"
+            },
+            "seen" : false
+          },
+          {
+            "id" : "0",
+            "media" : {
+              "file" : {
+                "file" : "assets/mock/feed/images/post.jpg"
+              },
+              "type" : "image"
+            },
+            "seen" : false
+          }
+        ]
       },
       "likes_number" : 335,
       "comments_number" : 56,

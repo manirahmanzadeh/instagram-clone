@@ -1,11 +1,9 @@
-import 'package:instagram_clone/src/models/file_model.dart';
-
-import 'media_model.dart';
+import 'package:instagram_clone/src/models/users/user_model.dart';
+import '../media_model.dart';
 
 class PostModel {
   final String id;
-  final String username;
-  final FileModel userAvatar;
+  final UserModel user;
   final int likesNumber;
   final List<String> peopleLiked;
   final String caption;
@@ -18,8 +16,7 @@ class PostModel {
 
   PostModel({
     required this.id,
-    required this.username,
-    required this.userAvatar,
+    required this.user,
     required this.likesNumber,
     required this.peopleLiked,
     required this.caption,
@@ -34,9 +31,8 @@ class PostModel {
   factory PostModel.fromJson(Map<String, dynamic> json) {
     return PostModel(
       id: json['id'] as String,
-      username: json['username'] as String,
-      userAvatar:
-          FileModel.fromJson(json['user_avatar'] as Map<String, dynamic>),
+      user:
+          UserModel.fromJson(json['user'] as Map<String, dynamic>),
       likesNumber: json['likes_number'] as int,
       peopleLiked:
           (json['people_liked'] as List).map((e) => e as String).toList(),

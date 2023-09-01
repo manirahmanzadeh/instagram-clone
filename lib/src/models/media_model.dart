@@ -1,4 +1,4 @@
-import '../file_model.dart';
+import 'file_model.dart';
 
 class MediaModel {
   final FileModel file;

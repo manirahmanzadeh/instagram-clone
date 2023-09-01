@@ -4,10 +4,10 @@ import 'package:flutter_svg/svg.dart';
 import 'package:infinite_scroll_pagination/infinite_scroll_pagination.dart';
 import 'package:instagram_clone/src/components/post/display/image_display.dart';
 import 'package:instagram_clone/src/components/post/share_list/share_list_bottomsheet.dart';
-import 'package:instagram_clone/src/models/post/media_model.dart';
+import 'package:instagram_clone/src/models/media_model.dart';
 import 'package:vrouter/vrouter.dart';
 
-import '../../../models/users/share_user_model.dart';
+import '../../../models/users/user_model.dart';
 import '../indicators/post_indicators.dart';
 import 'video_display.dart';
 
@@ -38,7 +38,7 @@ class PostDisplay extends StatefulWidget {
   final Future<void> Function() likeUnlikePost;
   final Future<void> Function() saveUnSavePost;
   final void Function() refreshUsers;
-  final PagingController<int, ShareUserModel> usersPagingController;
+  final PagingController<int, UserModel> usersPagingController;
   final double postAspectRatio;
 
   @override

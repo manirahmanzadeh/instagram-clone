@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:infinite_scroll_pagination/infinite_scroll_pagination.dart';
-import 'package:instagram_clone/src/models/users/share_user_model.dart';
+import 'package:instagram_clone/src/models/users/user_model.dart';
 import 'package:vrouter/vrouter.dart';
 
 import '../../empty_state.dart';
@@ -13,7 +13,7 @@ class ShareListBottomSheet extends StatefulWidget {
     required this.usersPagingController,
     required this.refreshUsers,
   }) : super(key: key);
-  final PagingController<int, ShareUserModel> usersPagingController;
+  final PagingController<int, UserModel> usersPagingController;
   final Function() refreshUsers;
 
   @override
@@ -21,9 +21,9 @@ class ShareListBottomSheet extends StatefulWidget {
 }
 
 class _ShareListBottomSheetState extends State<ShareListBottomSheet> {
-  List<ShareUserModel> shareList = [];
+  List<UserModel> shareList = [];
 
-  addToShareList(ShareUserModel shareUserModel) {
+  addToShareList(UserModel shareUserModel) {
     if (shareList.any((element) => element.id == shareUserModel.id)) {
       setState(() {
         shareList.removeWhere((element) => element.id == shareUserModel.id);
@@ -90,9 +90,9 @@ class _ShareListBottomSheetState extends State<ShareListBottomSheet> {
             child: Stack(
               alignment: Alignment.bottomCenter,
               children: [
-                PagedListView<int, ShareUserModel>(
+                PagedListView<int, UserModel>(
                   pagingController: widget.usersPagingController,
-                  builderDelegate: PagedChildBuilderDelegate<ShareUserModel>(
+                  builderDelegate: PagedChildBuilderDelegate<UserModel>(
                     itemBuilder: (context, item, index) {
                       if (index + 1 ==
                           widget.usersPagingController.itemList!.length) {

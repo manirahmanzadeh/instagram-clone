@@ -12,15 +12,15 @@ class MyStoryHolder extends StatelessWidget {
       child: Stack(
         alignment: Alignment.bottomRight,
         children: [
-          Stack(
+          const Stack(
             alignment: Alignment.center,
             children: [
-              SvgPicture.asset(
-                'assets/icons/feed/ellipse.svg',
-                width: double.maxFinite,
-                height: double.maxFinite,
-              ),
-              const Padding(
+              // SvgPicture.asset(
+              //   'assets/icons/feed/ellipse.svg',
+              //   width: double.maxFinite,
+              //   height: double.maxFinite,
+              // ),
+              Padding(
                 padding: EdgeInsets.all(73 * 7 / 100),
                 child: CircleAvatar(
                   backgroundImage: AssetImage('assets/mock/feed/images/me.png'),

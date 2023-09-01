@@ -50,11 +50,16 @@ class _CommentsPage extends StatelessWidget {
                 builderDelegate: PagedChildBuilderDelegate<CommentModel>(
                   itemBuilder: (context, item, index) {
                     return ListTile(
-                      leading: UserAvatar(size: 40, image: item.userAvatar),
+                      leading: UserAvatar(
+                        size: 40,
+                        image: item.user.userAvatar,
+                        newStory: item.user.newStory,
+                        hasStory: item.user.hasStory,
+                      ),
                       title: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          Text(item.username),
+                          Text(item.user.username),
                           Column(
                             mainAxisSize: MainAxisSize.min,
                             children: [

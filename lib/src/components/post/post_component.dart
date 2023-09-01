@@ -4,7 +4,7 @@ import 'package:infinite_scroll_pagination/infinite_scroll_pagination.dart';
 import 'package:instagram_clone/src/components/user_avatar.dart';
 import 'package:instagram_clone/src/models/post/post_model.dart';
 
-import '../../models/users/share_user_model.dart';
+import '../../models/users/user_model.dart';
 import 'display/post_display.dart';
 
 class PostComponent extends StatelessWidget {
@@ -27,7 +27,7 @@ class PostComponent extends StatelessWidget {
   final Future<void> Function() displayIndicators;
   final Future<void> Function() likeUnlikePost;
   final Future<void> Function() saveUnSavePost;
-  final PagingController<int, ShareUserModel> usersPagingController;
+  final PagingController<int, UserModel> usersPagingController;
   final Function() refreshUsers;
 
   @override
@@ -43,13 +43,15 @@ class PostComponent extends StatelessWidget {
             children: [
               UserAvatar(
                 size: 41,
-                image: post.userAvatar,
+                image: post.user.userAvatar,
+                hasStory: post.user.hasStory,
+                newStory: post.user.newStory,
               ),
               const SizedBox(
                 width: 5,
               ),
               Text(
-                post.username,
+                post.user.username,
                 style: Theme.of(context).textTheme.displayLarge,
               ),
               Expanded(child: Container()),
@@ -118,7 +120,7 @@ class PostComponent extends StatelessWidget {
           child: Wrap(
             children: [
               Text(
-                '${post.username} ',
+                '${post.user.username} ',
                 style: const TextStyle(fontWeight: FontWeight.bold),
               ),
               ExpandableText(post.caption, expandText: 'more', collapseText: 'less'),

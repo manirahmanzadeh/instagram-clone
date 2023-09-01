@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:instagram_clone/src/components/user_avatar.dart';
-import 'package:instagram_clone/src/models/users/share_user_model.dart';
+import 'package:instagram_clone/src/models/users/user_model.dart';
 
 class ShareUserComponent extends StatelessWidget {
   const ShareUserComponent({
@@ -9,21 +9,30 @@ class ShareUserComponent extends StatelessWidget {
     required this.addToShare,
     required this.selected,
   }) : super(key: key);
-  final ShareUserModel userModel;
+  final UserModel userModel;
   final bool selected;
   final Function() addToShare;
 
   @override
   Widget build(BuildContext context) {
     return ListTile(
-      leading: UserAvatar(size: 40, image: userModel.userAvatar),
+      leading: UserAvatar(
+        size: 40,
+        image: userModel.userAvatar,
+        newStory: userModel.newStory,
+        hasStory: userModel.hasStory,
+      ),
       onTap: addToShare,
       title: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           Text(userModel.name),
-          selected ? Icon(Icons.check_circle, color: Colors.blue,)
-              : Icon(Icons.circle_outlined)
+          selected
+              ? const Icon(
+                  Icons.check_circle,
+                  color: Colors.blue,
+                )
+              : const Icon(Icons.circle_outlined)
         ],
       ),
       subtitle: Text(userModel.username),
