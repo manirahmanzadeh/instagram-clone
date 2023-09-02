@@ -45,6 +45,8 @@ flutter:
     - assets/mock/feed/data/
     - assets/mock/feed/videos/
 
+    - assets/mock/explore/data/
+
 
   fonts:
     - family: proxima
