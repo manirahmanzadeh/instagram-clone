@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:infinite_scroll_pagination/infinite_scroll_pagination.dart';
 import 'package:instagram_clone/src/components/user_avatar.dart';
 import 'package:instagram_clone/src/models/post/post_model.dart';
+import 'package:vrouter/vrouter.dart';
 
 import '../../models/users/user_model.dart';
 import 'display/post_display.dart';
@@ -133,11 +134,14 @@ class PostComponent extends StatelessWidget {
           child: Row(
             children: [
               Expanded(
-                child: Text(
-                  'View ${post.commentsNumber} comments',
-                  style: Theme.of(context).textTheme.bodyMedium!.copyWith(
-                        color: const Color(0xFF8A8A8A),
-                      ),
+                child: InkWell(
+                  onTap: () => context.vRouter.to('comments/${post.id}'),
+                  child: Text(
+                    'View ${post.commentsNumber} comments',
+                    style: Theme.of(context).textTheme.bodyMedium!.copyWith(
+                      color: const Color(0xFF8A8A8A),
+                    ),
+                  ),
                 ),
               ),
             ],
