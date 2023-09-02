@@ -47,6 +47,8 @@ flutter:
 
     - assets/mock/explore/data/
 
+    - assets/mock/post_detail/data/
+
 
   fonts:
     - family: proxima

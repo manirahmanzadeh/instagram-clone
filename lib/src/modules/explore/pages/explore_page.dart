@@ -77,12 +77,15 @@ class _ExplorePage extends StatelessWidget {
                   ),
                   builderDelegate: PagedChildBuilderDelegate<ExplorePostModel>(
                     itemBuilder: (context, item, index) {
-                      return Container(
-                        decoration: BoxDecoration(
-                          color: Colors.grey,
-                          image: DecorationImage(
-                            image: AssetImage(item.cover.file),
-                            fit: BoxFit.cover,
+                      return InkWell(
+                        onTap: () => context.vRouter.to('post_detail/${item.id}'),
+                        child: Container(
+                          decoration: BoxDecoration(
+                            color: Colors.grey,
+                            image: DecorationImage(
+                              image: AssetImage(item.cover.file),
+                              fit: BoxFit.cover,
+                            ),
                           ),
                         ),
                       );
