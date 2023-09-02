@@ -35,7 +35,7 @@ class _App extends StatelessWidget {
       supportedLocales: AppLocalizations.supportedLocales,
       localizationsDelegates: AppLocalizations.localizationsDelegates,
       mode: VRouterMode.history,
-      initialUrl: '/feed',
+      initialUrl: '/explore',
       routes: Routes.routes,
       buildTransition: (animation, _, child) => FadeTransition(
         opacity: animation,
