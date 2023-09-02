@@ -6,20 +6,27 @@ import 'package:instagram_clone/src/core/safe_provider.dart';
 import 'package:instagram_clone/src/models/post/post_model.dart';
 import '../../../utils/error_handler.dart';
 import '../../../utils/error_template.dart';
-import '../api/explore_api.dart';
+import '../api/page_api.dart';
+import '../models/page_model.dart';
 
-class ExploreProvider extends SafeProvider with ErrorHandler {
+class PageProvider extends SafeProvider with ErrorHandler {
   final BuildContext context;
   PagingController<int, PostModel> postsPagingController =
       PagingController(firstPageKey: 0, invisibleItemsThreshold: 5);
 
-  final _exploreApi = ExploreApiMock();
+  final _pageApi = PageApiMock();
+  final String userId;
 
-  ExploreProvider({required this.context}) {
-    initPosts();
+  late final PageModel page;
+
+  bool isLoadingPageData = true;
+
+  PageProvider({required this.context, required this.userId}) {
+    initPage();
   }
 
-  Future<void> initPosts() async {
+  Future<void> initPage() async {
+    fetchPage();
     postsPagingController.addPageRequestListener((pageKey) {
       fetchPosts(pageKey);
     });
@@ -27,7 +34,7 @@ class ExploreProvider extends SafeProvider with ErrorHandler {
 
   Future<void> fetchPosts(int pageKey) async {
     try {
-      final response = await _exploreApi.fetchPosts(
+      final response = await _pageApi.fetchPosts(
         offset: pageKey,
       );
 
@@ -43,6 +50,21 @@ class ExploreProvider extends SafeProvider with ErrorHandler {
       postsPagingController.error = e;
       showError(context, e);
     }
+  }
+
+  Future<void> fetchPage() async {
+    isLoadingPageData = true;
+    notifyListeners();
+    try {
+      page = await _pageApi.getPage(
+        userId: userId,
+      );
+    } on ApiError catch (e) {
+      postsPagingController.error = e;
+      showError(context, e);
+    }
+    isLoadingPageData = false;
+    notifyListeners();
   }
 
   FutureOr<void> refreshPosts() {

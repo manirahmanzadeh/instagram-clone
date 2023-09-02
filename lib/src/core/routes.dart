@@ -1,5 +1,6 @@
 import 'package:instagram_clone/src/modules/comments/pages/comments_page.dart';
 import 'package:instagram_clone/src/modules/explore/pages/search_page.dart';
+import 'package:instagram_clone/src/modules/page/pages/page_page.dart';
 import 'package:vrouter/vrouter.dart';
 
 import '../modules/explore/pages/explore_page.dart';
@@ -98,6 +99,10 @@ class Routes {
                         VWidget(
                           path: 'stories/:user_id',
                           widget: const StoriesPage(),
+                        ),
+                        VWidget(
+                          path: 'page/:user_id',
+                          widget: const PagePage(),
                         ),
                       ],
                     ),

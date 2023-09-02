@@ -1,4 +1,5 @@
 import 'package:instagram_clone/src/models/users/user_model.dart';
+import '../file_model.dart';
 import '../media_model.dart';
 
 class PostModel {
@@ -13,6 +14,7 @@ class PostModel {
   bool liked;
   bool saved;
   final List<MediaModel> medias;
+  final FileModel? cover;
 
   PostModel({
     required this.id,
@@ -26,6 +28,7 @@ class PostModel {
     required this.liked,
     required this.saved,
     required this.aspectRatio,
+    this.cover,
   });
 
   factory PostModel.fromJson(Map<String, dynamic> json) {
@@ -45,6 +48,7 @@ class PostModel {
       medias: (json['medias'] as List)
           .map((e) => MediaModel.fromJson(e as Map<String, dynamic>))
           .toList(),
+      cover: FileModel.fromJson(json['cover']),
     );
   }
 

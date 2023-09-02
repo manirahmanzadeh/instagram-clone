@@ -48,6 +48,7 @@ flutter:
     - assets/mock/explore/data/
 
     - assets/mock/post_detail/data/
+    - assets/mock/page/data/
 
 
   fonts:

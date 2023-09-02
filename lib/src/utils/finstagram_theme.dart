@@ -34,7 +34,7 @@ mixin FinstagramTheme {
             color: Color(0xFF474747),
           ),
           bodySmall: TextStyle(
-            fontSize: 10,
+            fontSize: 12,
             fontWeight: FontWeight.w400,
             color: Color(0xFF9F9F9F),
           ),

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:infinite_scroll_pagination/infinite_scroll_pagination.dart';
 import 'package:provider/provider.dart';
+import 'package:vrouter/vrouter.dart';
 import '../../../components/empty_state.dart';
 import '../../../components/user_avatar.dart';
 import '../../../models/users/user_model.dart';
@@ -78,7 +79,7 @@ class _SearchPage extends StatelessWidget {
                               size: 40,
                               user: item,
                             ),
-                            onTap: (){},
+                            onTap: () => context.vRouter.to('page/${item.id}'),
                             title: Row(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [

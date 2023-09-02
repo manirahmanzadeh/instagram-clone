@@ -3,9 +3,8 @@ import 'package:flutter_svg/svg.dart';
 import 'package:infinite_scroll_pagination/infinite_scroll_pagination.dart';
 import 'package:provider/provider.dart';
 import 'package:vrouter/vrouter.dart';
-
 import '../../../components/empty_state.dart';
-import '../models/explore_post.dart';
+import '../../../models/post/post_model.dart';
 import '../providers/explore_provider.dart';
 
 class ExplorePage extends StatelessWidget {
@@ -67,7 +66,7 @@ class _ExplorePage extends StatelessWidget {
             Expanded(
               child: RefreshIndicator(
                 onRefresh: () => Future.sync(staticProvider.refreshPosts),
-                child: PagedGridView<int, ExplorePostModel>(
+                child: PagedGridView<int, PostModel>(
                   pagingController: provider.postsPagingController,
                   gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                     childAspectRatio: 100 / 100,
@@ -75,17 +74,20 @@ class _ExplorePage extends StatelessWidget {
                     mainAxisSpacing: 5,
                     crossAxisCount: 3,
                   ),
-                  builderDelegate: PagedChildBuilderDelegate<ExplorePostModel>(
+                  builderDelegate: PagedChildBuilderDelegate<PostModel>(
                     itemBuilder: (context, item, index) {
                       return InkWell(
-                        onTap: () => context.vRouter.to('post_detail/${item.id}'),
+                        onTap: () =>
+                            context.vRouter.to('post_detail/${item.id}'),
                         child: Container(
                           decoration: BoxDecoration(
                             color: Colors.grey,
-                            image: DecorationImage(
-                              image: AssetImage(item.cover.file),
-                              fit: BoxFit.cover,
-                            ),
+                            image: item.cover != null
+                                ? DecorationImage(
+                                    image: AssetImage(item.cover!.file),
+                                    fit: BoxFit.cover,
+                                  )
+                                : null,
                           ),
                         ),
                       );
