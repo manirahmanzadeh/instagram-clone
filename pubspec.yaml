@@ -39,6 +39,7 @@ flutter:
   assets:
     - assets/icons/feed/
     - assets/icons/post/
+    - assets/icons/login/
 
     #mock: (Must be removed when api is ready)
     - assets/mock/feed/images/
@@ -63,3 +64,4 @@ flutter:
     - family: bill
       fonts:
         - asset: fonts/Billabong/Billabong.ttf
+
