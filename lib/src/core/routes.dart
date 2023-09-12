@@ -1,5 +1,7 @@
 import 'package:instagram_clone/src/modules/comments/pages/comments_page.dart';
 import 'package:instagram_clone/src/modules/explore/pages/search_page.dart';
+import 'package:instagram_clone/src/modules/login/pages/login_page_1.dart';
+import 'package:instagram_clone/src/modules/login/pages/login_page_2.dart';
 import 'package:vrouter/vrouter.dart';
 
 import '../modules/explore/pages/explore_page.dart';
@@ -80,6 +82,14 @@ class Routes {
                       ],
                     ),
                   ],
+                ),
+                VWidget(
+                  path: '/login1',
+                  widget: const LoginPage1(),
+                ),
+                VWidget(
+                  path: '/login2',
+                  widget: const LoginPage2(),
                 ),
                 VWidget(
                   path: 'search',

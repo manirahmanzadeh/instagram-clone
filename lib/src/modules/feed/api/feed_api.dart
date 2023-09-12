@@ -22,7 +22,7 @@ class FeedApiMock implements FeedApi {
   }) async {
     await Future.delayed(const Duration(seconds: 1));
     final response =
-        await rootBundle.loadString('assets/mock/feed/data/explore_posts.json');
+        await rootBundle.loadString('assets/mock/feed/data/feed_posts.json');
     final data = jsonDecode(response) as Map<String, dynamic>;
     return FeedResponseModel.fromJson(data);
   }
