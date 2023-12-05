@@ -11,8 +11,8 @@ import '../models/page_model.dart';
 
 class PageProvider extends SafeProvider with ErrorHandler {
   final BuildContext context;
-  PagingController<int, PostModel> postsPagingController =
-      PagingController(firstPageKey: 0, invisibleItemsThreshold: 5);
+
+  late final List<PostModel> posts;
 
   final _pageApi = PageApiMock();
   final String userId;
@@ -20,6 +20,7 @@ class PageProvider extends SafeProvider with ErrorHandler {
   late final PageModel page;
 
   bool isLoadingPageData = true;
+  bool isLoadingPosts = true;
 
   PageProvider({required this.context, required this.userId}) {
     initPage();
@@ -27,29 +28,23 @@ class PageProvider extends SafeProvider with ErrorHandler {
 
   Future<void> initPage() async {
     fetchPage();
-    postsPagingController.addPageRequestListener((pageKey) {
-      fetchPosts(pageKey);
-    });
+    fetchPosts();
   }
 
-  Future<void> fetchPosts(int pageKey) async {
+  Future<void> fetchPosts() async {
+    isLoadingPosts = true;
+    notifyListeners();
     try {
       final response = await _pageApi.fetchPosts(
-        offset: pageKey,
+        offset: 0,
       );
+      posts = response.posts;
 
-      final newItems = response.posts;
-
-      if ((pageKey + newItems.length) == response.totalResult) {
-        postsPagingController.appendLastPage(newItems);
-      } else {
-        postsPagingController.appendPage(
-            newItems, pageKey + newItems.length);
-      }
     } on ApiError catch (e) {
-      postsPagingController.error = e;
       showError(context, e);
     }
+    isLoadingPosts = false;
+    notifyListeners();
   }
 
   Future<void> fetchPage() async {
@@ -60,7 +55,6 @@ class PageProvider extends SafeProvider with ErrorHandler {
         userId: userId,
       );
     } on ApiError catch (e) {
-      postsPagingController.error = e;
       showError(context, e);
     }
     isLoadingPageData = false;
@@ -68,7 +62,7 @@ class PageProvider extends SafeProvider with ErrorHandler {
   }
 
   FutureOr<void> refreshPosts() {
-    postsPagingController.refresh();
+    // postsPagingController.refresh();
   }
 
 

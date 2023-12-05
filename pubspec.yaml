@@ -25,6 +25,7 @@ dependencies:
   infinite_scroll_pagination: ^4.0.0
   video_player: ^2.7.0
   expandable_text: ^2.3.0
+  sticky_headers: ^0.3.0+2
 
 dev_dependencies:
   flutter_test:
@@ -39,6 +40,7 @@ flutter:
   assets:
     - assets/icons/feed/
     - assets/icons/post/
+    - assets/icons/page/
 
     #mock: (Must be removed when api is ready)
     - assets/mock/feed/images/

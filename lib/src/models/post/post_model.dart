@@ -48,7 +48,7 @@ class PostModel {
       medias: (json['medias'] as List)
           .map((e) => MediaModel.fromJson(e as Map<String, dynamic>))
           .toList(),
-      cover: FileModel.fromJson(json['cover']),
+      cover: json['cover'] != null ?FileModel.fromJson(json['cover']) :null,
     );
   }
 

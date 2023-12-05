@@ -168,6 +168,1182 @@
           "type" : "video"
         }
       ]
+    },
+    {
+      "id" : "0",
+      "user" : {
+        "id" : "0",
+        "username" : "mani.rahmanzade",
+        "name" : "Mani Rahmanzadeh",
+        "user_avatar" : {
+          "file" : "assets/mock/feed/images/me.png"
+        },
+        "stories" : [
+          {
+            "id" : "0",
+            "media" : {
+              "file" : {
+                "file" : "assets/mock/feed/images/post.jpg"
+              },
+              "type" : "image"
+            },
+            "seen" : false
+          },
+          {
+            "id" : "0",
+            "media" : {
+              "file" : {
+                "file" : "assets/mock/feed/images/post.jpg"
+              },
+              "type" : "image"
+            },
+            "seen" : false
+          }
+        ]
+      },
+      "likes_number" : 335,
+      "comments_number" : 56,
+      "people_liked" : ["parsa", "jafar", "akbar"],
+      "caption" : "Friendship is like a beautiful garden, where trust and loyalty are the flowers that bloom in every season. \uD83C\uDF3C\uD83C\uDF3F Through the highs and lows, friends stand by your side, making life's journey sweeter. Cherish these precious connections and celebrate the moments that make us smile, for true friendship is a treasure that lasts a lifetime. \uD83E\uDD17\uD83D\uDCAB #FriendsForLife #ForeverGrateful #FriendshipGoals",
+      "is_slide" : true,
+      "liked" : false,
+      "saved" : true,
+      "aspect_ratio": 1.91,
+      "cover" : {
+        "file" : "assets/mock/feed/images/post.jpg"
+      },
+      "medias" : [
+        {
+          "file" : {
+            "file" : "assets/mock/feed/images/post.jpg"
+          },
+          "type" : "image"
+        },
+        {
+          "file" : {
+            "file" : "assets/mock/feed/videos/video_4.mp4"
+          },
+          "type" : "video"
+        },
+        {
+          "file" : {
+            "file" : "assets/mock/feed/videos/video.mp4"
+          },
+          "type" : "video"
+        }
+      ]
+    },
+    {
+      "id" : "1",
+      "user" : {
+        "id" : "0",
+        "username" : "mani.rahmanzade",
+        "name" : "Mani Rahmanzadeh",
+        "user_avatar" : {
+          "file" : "assets/mock/feed/images/me.png"
+        },
+        "stories" : [
+          {
+            "id" : "0",
+            "media" : {
+              "file" : {
+                "file" : "assets/mock/feed/images/post.jpg"
+              },
+              "type" : "image"
+            },
+            "seen" : false
+          },
+          {
+            "id" : "0",
+            "media" : {
+              "file" : {
+                "file" : "assets/mock/feed/images/post.jpg"
+              },
+              "type" : "image"
+            },
+            "seen" : false
+          }
+        ]
+      },
+      "likes_number" : 335,
+      "comments_number" : 56,
+      "people_liked" : ["parsa", "jafar", "akbar"],
+      "caption" : "A good day with my friend Parsa. love you so much bro...",
+      "is_slide" : true,
+      "liked" : true,
+      "saved" : false,
+      "aspect_ratio": 1.0,
+      "cover" : {
+        "file" : "assets/mock/feed/images/post.jpg"
+      },
+      "medias" : [
+        {
+          "file" : {
+            "file" : "assets/mock/feed/videos/video_4.mp4"
+          },
+          "type" : "video"
+        }
+      ]
+    },
+    {
+      "id" : "1",
+      "user" : {
+        "id" : "0",
+        "username" : "mani.rahmanzade",
+        "name" : "Mani Rahmanzadeh",
+        "user_avatar" : {
+          "file" : "assets/mock/feed/images/me.png"
+        },
+        "stories" : [
+          {
+            "id" : "0",
+            "media" : {
+              "file" : {
+                "file" : "assets/mock/feed/images/post.jpg"
+              },
+              "type" : "image"
+            },
+            "seen" : false
+          },
+          {
+            "id" : "0",
+            "media" : {
+              "file" : {
+                "file" : "assets/mock/feed/images/post.jpg"
+              },
+              "type" : "image"
+            },
+            "seen" : false
+          }
+        ]
+      },
+      "likes_number" : 335,
+      "comments_number" : 56,
+      "people_liked" : ["parsa", "jafar", "akbar"],
+      "caption" : "A good day with my friend Parsa. love you so much bro...",
+      "is_slide" : true,
+      "liked" : true,
+      "saved" : false,
+      "aspect_ratio": 0.8,
+      "cover" : {
+        "file" : "assets/mock/feed/images/post.jpg"
+      },
+      "medias" : [
+        {
+          "file" : {
+            "file" : "assets/mock/feed/videos/video_4.mp4"
+          },
+          "type" : "video"
+        }
+      ]
+    },
+    {
+      "id" : "0",
+      "user" : {
+        "id" : "0",
+        "username" : "mani.rahmanzade",
+        "name" : "Mani Rahmanzadeh",
+        "user_avatar" : {
+          "file" : "assets/mock/feed/images/me.png"
+        },
+        "stories" : [
+          {
+            "id" : "0",
+            "media" : {
+              "file" : {
+                "file" : "assets/mock/feed/images/post.jpg"
+              },
+              "type" : "image"
+            },
+            "seen" : false
+          },
+          {
+            "id" : "0",
+            "media" : {
+              "file" : {
+                "file" : "assets/mock/feed/images/post.jpg"
+              },
+              "type" : "image"
+            },
+            "seen" : false
+          }
+        ]
+      },
+      "likes_number" : 335,
+      "comments_number" : 56,
+      "people_liked" : ["parsa", "jafar", "akbar"],
+      "caption" : "Friendship is like a beautiful garden, where trust and loyalty are the flowers that bloom in every season. \uD83C\uDF3C\uD83C\uDF3F Through the highs and lows, friends stand by your side, making life's journey sweeter. Cherish these precious connections and celebrate the moments that make us smile, for true friendship is a treasure that lasts a lifetime. \uD83E\uDD17\uD83D\uDCAB #FriendsForLife #ForeverGrateful #FriendshipGoals",
+      "is_slide" : true,
+      "liked" : false,
+      "saved" : true,
+      "aspect_ratio": 1.91,
+      "cover" : {
+        "file" : "assets/mock/feed/images/post.jpg"
+      },
+      "medias" : [
+        {
+          "file" : {
+            "file" : "assets/mock/feed/images/post.jpg"
+          },
+          "type" : "image"
+        },
+        {
+          "file" : {
+            "file" : "assets/mock/feed/videos/video_4.mp4"
+          },
+          "type" : "video"
+        },
+        {
+          "file" : {
+            "file" : "assets/mock/feed/videos/video.mp4"
+          },
+          "type" : "video"
+        }
+      ]
+    },
+    {
+      "id" : "1",
+      "user" : {
+        "id" : "0",
+        "username" : "mani.rahmanzade",
+        "name" : "Mani Rahmanzadeh",
+        "user_avatar" : {
+          "file" : "assets/mock/feed/images/me.png"
+        },
+        "stories" : [
+          {
+            "id" : "0",
+            "media" : {
+              "file" : {
+                "file" : "assets/mock/feed/images/post.jpg"
+              },
+              "type" : "image"
+            },
+            "seen" : false
+          },
+          {
+            "id" : "0",
+            "media" : {
+              "file" : {
+                "file" : "assets/mock/feed/images/post.jpg"
+              },
+              "type" : "image"
+            },
+            "seen" : false
+          }
+        ]
+      },
+      "likes_number" : 335,
+      "comments_number" : 56,
+      "people_liked" : ["parsa", "jafar", "akbar"],
+      "caption" : "A good day with my friend Parsa. love you so much bro...",
+      "is_slide" : true,
+      "liked" : true,
+      "saved" : false,
+      "aspect_ratio": 1.0,
+      "cover" : {
+        "file" : "assets/mock/feed/images/post.jpg"
+      },
+      "medias" : [
+        {
+          "file" : {
+            "file" : "assets/mock/feed/videos/video_4.mp4"
+          },
+          "type" : "video"
+        }
+      ]
+    },
+    {
+      "id" : "1",
+      "user" : {
+        "id" : "0",
+        "username" : "mani.rahmanzade",
+        "name" : "Mani Rahmanzadeh",
+        "user_avatar" : {
+          "file" : "assets/mock/feed/images/me.png"
+        },
+        "stories" : [
+          {
+            "id" : "0",
+            "media" : {
+              "file" : {
+                "file" : "assets/mock/feed/images/post.jpg"
+              },
+              "type" : "image"
+            },
+            "seen" : false
+          },
+          {
+            "id" : "0",
+            "media" : {
+              "file" : {
+                "file" : "assets/mock/feed/images/post.jpg"
+              },
+              "type" : "image"
+            },
+            "seen" : false
+          }
+        ]
+      },
+      "likes_number" : 335,
+      "comments_number" : 56,
+      "people_liked" : ["parsa", "jafar", "akbar"],
+      "caption" : "A good day with my friend Parsa. love you so much bro...",
+      "is_slide" : true,
+      "liked" : true,
+      "saved" : false,
+      "aspect_ratio": 0.8,
+      "cover" : {
+        "file" : "assets/mock/feed/images/post.jpg"
+      },
+      "medias" : [
+        {
+          "file" : {
+            "file" : "assets/mock/feed/videos/video_4.mp4"
+          },
+          "type" : "video"
+        }
+      ]
+    },
+    {
+      "id" : "0",
+      "user" : {
+        "id" : "0",
+        "username" : "mani.rahmanzade",
+        "name" : "Mani Rahmanzadeh",
+        "user_avatar" : {
+          "file" : "assets/mock/feed/images/me.png"
+        },
+        "stories" : [
+          {
+            "id" : "0",
+            "media" : {
+              "file" : {
+                "file" : "assets/mock/feed/images/post.jpg"
+              },
+              "type" : "image"
+            },
+            "seen" : false
+          },
+          {
+            "id" : "0",
+            "media" : {
+              "file" : {
+                "file" : "assets/mock/feed/images/post.jpg"
+              },
+              "type" : "image"
+            },
+            "seen" : false
+          }
+        ]
+      },
+      "likes_number" : 335,
+      "comments_number" : 56,
+      "people_liked" : ["parsa", "jafar", "akbar"],
+      "caption" : "Friendship is like a beautiful garden, where trust and loyalty are the flowers that bloom in every season. \uD83C\uDF3C\uD83C\uDF3F Through the highs and lows, friends stand by your side, making life's journey sweeter. Cherish these precious connections and celebrate the moments that make us smile, for true friendship is a treasure that lasts a lifetime. \uD83E\uDD17\uD83D\uDCAB #FriendsForLife #ForeverGrateful #FriendshipGoals",
+      "is_slide" : true,
+      "liked" : false,
+      "saved" : true,
+      "aspect_ratio": 1.91,
+      "cover" : {
+        "file" : "assets/mock/feed/images/post.jpg"
+      },
+      "medias" : [
+        {
+          "file" : {
+            "file" : "assets/mock/feed/images/post.jpg"
+          },
+          "type" : "image"
+        },
+        {
+          "file" : {
+            "file" : "assets/mock/feed/videos/video_4.mp4"
+          },
+          "type" : "video"
+        },
+        {
+          "file" : {
+            "file" : "assets/mock/feed/videos/video.mp4"
+          },
+          "type" : "video"
+        }
+      ]
+    },
+    {
+      "id" : "1",
+      "user" : {
+        "id" : "0",
+        "username" : "mani.rahmanzade",
+        "name" : "Mani Rahmanzadeh",
+        "user_avatar" : {
+          "file" : "assets/mock/feed/images/me.png"
+        },
+        "stories" : [
+          {
+            "id" : "0",
+            "media" : {
+              "file" : {
+                "file" : "assets/mock/feed/images/post.jpg"
+              },
+              "type" : "image"
+            },
+            "seen" : false
+          },
+          {
+            "id" : "0",
+            "media" : {
+              "file" : {
+                "file" : "assets/mock/feed/images/post.jpg"
+              },
+              "type" : "image"
+            },
+            "seen" : false
+          }
+        ]
+      },
+      "likes_number" : 335,
+      "comments_number" : 56,
+      "people_liked" : ["parsa", "jafar", "akbar"],
+      "caption" : "A good day with my friend Parsa. love you so much bro...",
+      "is_slide" : true,
+      "liked" : true,
+      "saved" : false,
+      "aspect_ratio": 1.0,
+      "cover" : {
+        "file" : "assets/mock/feed/images/post.jpg"
+      },
+      "medias" : [
+        {
+          "file" : {
+            "file" : "assets/mock/feed/videos/video_4.mp4"
+          },
+          "type" : "video"
+        }
+      ]
+    },
+    {
+      "id" : "1",
+      "user" : {
+        "id" : "0",
+        "username" : "mani.rahmanzade",
+        "name" : "Mani Rahmanzadeh",
+        "user_avatar" : {
+          "file" : "assets/mock/feed/images/me.png"
+        },
+        "stories" : [
+          {
+            "id" : "0",
+            "media" : {
+              "file" : {
+                "file" : "assets/mock/feed/images/post.jpg"
+              },
+              "type" : "image"
+            },
+            "seen" : false
+          },
+          {
+            "id" : "0",
+            "media" : {
+              "file" : {
+                "file" : "assets/mock/feed/images/post.jpg"
+              },
+              "type" : "image"
+            },
+            "seen" : false
+          }
+        ]
+      },
+      "likes_number" : 335,
+      "comments_number" : 56,
+      "people_liked" : ["parsa", "jafar", "akbar"],
+      "caption" : "A good day with my friend Parsa. love you so much bro...",
+      "is_slide" : true,
+      "liked" : true,
+      "saved" : false,
+      "aspect_ratio": 0.8,
+      "cover" : {
+        "file" : "assets/mock/feed/images/post.jpg"
+      },
+      "medias" : [
+        {
+          "file" : {
+            "file" : "assets/mock/feed/videos/video_4.mp4"
+          },
+          "type" : "video"
+        }
+      ]
+    },
+    {
+      "id" : "0",
+      "user" : {
+        "id" : "0",
+        "username" : "mani.rahmanzade",
+        "name" : "Mani Rahmanzadeh",
+        "user_avatar" : {
+          "file" : "assets/mock/feed/images/me.png"
+        },
+        "stories" : [
+          {
+            "id" : "0",
+            "media" : {
+              "file" : {
+                "file" : "assets/mock/feed/images/post.jpg"
+              },
+              "type" : "image"
+            },
+            "seen" : false
+          },
+          {
+            "id" : "0",
+            "media" : {
+              "file" : {
+                "file" : "assets/mock/feed/images/post.jpg"
+              },
+              "type" : "image"
+            },
+            "seen" : false
+          }
+        ]
+      },
+      "likes_number" : 335,
+      "comments_number" : 56,
+      "people_liked" : ["parsa", "jafar", "akbar"],
+      "caption" : "Friendship is like a beautiful garden, where trust and loyalty are the flowers that bloom in every season. \uD83C\uDF3C\uD83C\uDF3F Through the highs and lows, friends stand by your side, making life's journey sweeter. Cherish these precious connections and celebrate the moments that make us smile, for true friendship is a treasure that lasts a lifetime. \uD83E\uDD17\uD83D\uDCAB #FriendsForLife #ForeverGrateful #FriendshipGoals",
+      "is_slide" : true,
+      "liked" : false,
+      "saved" : true,
+      "aspect_ratio": 1.91,
+      "cover" : {
+        "file" : "assets/mock/feed/images/post.jpg"
+      },
+      "medias" : [
+        {
+          "file" : {
+            "file" : "assets/mock/feed/images/post.jpg"
+          },
+          "type" : "image"
+        },
+        {
+          "file" : {
+            "file" : "assets/mock/feed/videos/video_4.mp4"
+          },
+          "type" : "video"
+        },
+        {
+          "file" : {
+            "file" : "assets/mock/feed/videos/video.mp4"
+          },
+          "type" : "video"
+        }
+      ]
+    },
+    {
+      "id" : "1",
+      "user" : {
+        "id" : "0",
+        "username" : "mani.rahmanzade",
+        "name" : "Mani Rahmanzadeh",
+        "user_avatar" : {
+          "file" : "assets/mock/feed/images/me.png"
+        },
+        "stories" : [
+          {
+            "id" : "0",
+            "media" : {
+              "file" : {
+                "file" : "assets/mock/feed/images/post.jpg"
+              },
+              "type" : "image"
+            },
+            "seen" : false
+          },
+          {
+            "id" : "0",
+            "media" : {
+              "file" : {
+                "file" : "assets/mock/feed/images/post.jpg"
+              },
+              "type" : "image"
+            },
+            "seen" : false
+          }
+        ]
+      },
+      "likes_number" : 335,
+      "comments_number" : 56,
+      "people_liked" : ["parsa", "jafar", "akbar"],
+      "caption" : "A good day with my friend Parsa. love you so much bro...",
+      "is_slide" : true,
+      "liked" : true,
+      "saved" : false,
+      "aspect_ratio": 1.0,
+      "cover" : {
+        "file" : "assets/mock/feed/images/post.jpg"
+      },
+      "medias" : [
+        {
+          "file" : {
+            "file" : "assets/mock/feed/videos/video_4.mp4"
+          },
+          "type" : "video"
+        }
+      ]
+    },
+    {
+      "id" : "1",
+      "user" : {
+        "id" : "0",
+        "username" : "mani.rahmanzade",
+        "name" : "Mani Rahmanzadeh",
+        "user_avatar" : {
+          "file" : "assets/mock/feed/images/me.png"
+        },
+        "stories" : [
+          {
+            "id" : "0",
+            "media" : {
+              "file" : {
+                "file" : "assets/mock/feed/images/post.jpg"
+              },
+              "type" : "image"
+            },
+            "seen" : false
+          },
+          {
+            "id" : "0",
+            "media" : {
+              "file" : {
+                "file" : "assets/mock/feed/images/post.jpg"
+              },
+              "type" : "image"
+            },
+            "seen" : false
+          }
+        ]
+      },
+      "likes_number" : 335,
+      "comments_number" : 56,
+      "people_liked" : ["parsa", "jafar", "akbar"],
+      "caption" : "A good day with my friend Parsa. love you so much bro...",
+      "is_slide" : true,
+      "liked" : true,
+      "saved" : false,
+      "aspect_ratio": 0.8,
+      "cover" : {
+        "file" : "assets/mock/feed/images/post.jpg"
+      },
+      "medias" : [
+        {
+          "file" : {
+            "file" : "assets/mock/feed/videos/video_4.mp4"
+          },
+          "type" : "video"
+        }
+      ]
+    },
+    {
+      "id" : "0",
+      "user" : {
+        "id" : "0",
+        "username" : "mani.rahmanzade",
+        "name" : "Mani Rahmanzadeh",
+        "user_avatar" : {
+          "file" : "assets/mock/feed/images/me.png"
+        },
+        "stories" : [
+          {
+            "id" : "0",
+            "media" : {
+              "file" : {
+                "file" : "assets/mock/feed/images/post.jpg"
+              },
+              "type" : "image"
+            },
+            "seen" : false
+          },
+          {
+            "id" : "0",
+            "media" : {
+              "file" : {
+                "file" : "assets/mock/feed/images/post.jpg"
+              },
+              "type" : "image"
+            },
+            "seen" : false
+          }
+        ]
+      },
+      "likes_number" : 335,
+      "comments_number" : 56,
+      "people_liked" : ["parsa", "jafar", "akbar"],
+      "caption" : "Friendship is like a beautiful garden, where trust and loyalty are the flowers that bloom in every season. \uD83C\uDF3C\uD83C\uDF3F Through the highs and lows, friends stand by your side, making life's journey sweeter. Cherish these precious connections and celebrate the moments that make us smile, for true friendship is a treasure that lasts a lifetime. \uD83E\uDD17\uD83D\uDCAB #FriendsForLife #ForeverGrateful #FriendshipGoals",
+      "is_slide" : true,
+      "liked" : false,
+      "saved" : true,
+      "aspect_ratio": 1.91,
+      "cover" : {
+        "file" : "assets/mock/feed/images/post.jpg"
+      },
+      "medias" : [
+        {
+          "file" : {
+            "file" : "assets/mock/feed/images/post.jpg"
+          },
+          "type" : "image"
+        },
+        {
+          "file" : {
+            "file" : "assets/mock/feed/videos/video_4.mp4"
+          },
+          "type" : "video"
+        },
+        {
+          "file" : {
+            "file" : "assets/mock/feed/videos/video.mp4"
+          },
+          "type" : "video"
+        }
+      ]
+    },
+    {
+      "id" : "1",
+      "user" : {
+        "id" : "0",
+        "username" : "mani.rahmanzade",
+        "name" : "Mani Rahmanzadeh",
+        "user_avatar" : {
+          "file" : "assets/mock/feed/images/me.png"
+        },
+        "stories" : [
+          {
+            "id" : "0",
+            "media" : {
+              "file" : {
+                "file" : "assets/mock/feed/images/post.jpg"
+              },
+              "type" : "image"
+            },
+            "seen" : false
+          },
+          {
+            "id" : "0",
+            "media" : {
+              "file" : {
+                "file" : "assets/mock/feed/images/post.jpg"
+              },
+              "type" : "image"
+            },
+            "seen" : false
+          }
+        ]
+      },
+      "likes_number" : 335,
+      "comments_number" : 56,
+      "people_liked" : ["parsa", "jafar", "akbar"],
+      "caption" : "A good day with my friend Parsa. love you so much bro...",
+      "is_slide" : true,
+      "liked" : true,
+      "saved" : false,
+      "aspect_ratio": 1.0,
+      "cover" : {
+        "file" : "assets/mock/feed/images/post.jpg"
+      },
+      "medias" : [
+        {
+          "file" : {
+            "file" : "assets/mock/feed/videos/video_4.mp4"
+          },
+          "type" : "video"
+        }
+      ]
+    },
+    {
+      "id" : "1",
+      "user" : {
+        "id" : "0",
+        "username" : "mani.rahmanzade",
+        "name" : "Mani Rahmanzadeh",
+        "user_avatar" : {
+          "file" : "assets/mock/feed/images/me.png"
+        },
+        "stories" : [
+          {
+            "id" : "0",
+            "media" : {
+              "file" : {
+                "file" : "assets/mock/feed/images/post.jpg"
+              },
+              "type" : "image"
+            },
+            "seen" : false
+          },
+          {
+            "id" : "0",
+            "media" : {
+              "file" : {
+                "file" : "assets/mock/feed/images/post.jpg"
+              },
+              "type" : "image"
+            },
+            "seen" : false
+          }
+        ]
+      },
+      "likes_number" : 335,
+      "comments_number" : 56,
+      "people_liked" : ["parsa", "jafar", "akbar"],
+      "caption" : "A good day with my friend Parsa. love you so much bro...",
+      "is_slide" : true,
+      "liked" : true,
+      "saved" : false,
+      "aspect_ratio": 0.8,
+      "cover" : {
+        "file" : "assets/mock/feed/images/post.jpg"
+      },
+      "medias" : [
+        {
+          "file" : {
+            "file" : "assets/mock/feed/videos/video_4.mp4"
+          },
+          "type" : "video"
+        }
+      ]
+    },
+    {
+      "id" : "0",
+      "user" : {
+        "id" : "0",
+        "username" : "mani.rahmanzade",
+        "name" : "Mani Rahmanzadeh",
+        "user_avatar" : {
+          "file" : "assets/mock/feed/images/me.png"
+        },
+        "stories" : [
+          {
+            "id" : "0",
+            "media" : {
+              "file" : {
+                "file" : "assets/mock/feed/images/post.jpg"
+              },
+              "type" : "image"
+            },
+            "seen" : false
+          },
+          {
+            "id" : "0",
+            "media" : {
+              "file" : {
+                "file" : "assets/mock/feed/images/post.jpg"
+              },
+              "type" : "image"
+            },
+            "seen" : false
+          }
+        ]
+      },
+      "likes_number" : 335,
+      "comments_number" : 56,
+      "people_liked" : ["parsa", "jafar", "akbar"],
+      "caption" : "Friendship is like a beautiful garden, where trust and loyalty are the flowers that bloom in every season. \uD83C\uDF3C\uD83C\uDF3F Through the highs and lows, friends stand by your side, making life's journey sweeter. Cherish these precious connections and celebrate the moments that make us smile, for true friendship is a treasure that lasts a lifetime. \uD83E\uDD17\uD83D\uDCAB #FriendsForLife #ForeverGrateful #FriendshipGoals",
+      "is_slide" : true,
+      "liked" : false,
+      "saved" : true,
+      "aspect_ratio": 1.91,
+      "cover" : {
+        "file" : "assets/mock/feed/images/post.jpg"
+      },
+      "medias" : [
+        {
+          "file" : {
+            "file" : "assets/mock/feed/images/post.jpg"
+          },
+          "type" : "image"
+        },
+        {
+          "file" : {
+            "file" : "assets/mock/feed/videos/video_4.mp4"
+          },
+          "type" : "video"
+        },
+        {
+          "file" : {
+            "file" : "assets/mock/feed/videos/video.mp4"
+          },
+          "type" : "video"
+        }
+      ]
+    },
+    {
+      "id" : "1",
+      "user" : {
+        "id" : "0",
+        "username" : "mani.rahmanzade",
+        "name" : "Mani Rahmanzadeh",
+        "user_avatar" : {
+          "file" : "assets/mock/feed/images/me.png"
+        },
+        "stories" : [
+          {
+            "id" : "0",
+            "media" : {
+              "file" : {
+                "file" : "assets/mock/feed/images/post.jpg"
+              },
+              "type" : "image"
+            },
+            "seen" : false
+          },
+          {
+            "id" : "0",
+            "media" : {
+              "file" : {
+                "file" : "assets/mock/feed/images/post.jpg"
+              },
+              "type" : "image"
+            },
+            "seen" : false
+          }
+        ]
+      },
+      "likes_number" : 335,
+      "comments_number" : 56,
+      "people_liked" : ["parsa", "jafar", "akbar"],
+      "caption" : "A good day with my friend Parsa. love you so much bro...",
+      "is_slide" : true,
+      "liked" : true,
+      "saved" : false,
+      "aspect_ratio": 1.0,
+      "cover" : {
+        "file" : "assets/mock/feed/images/post.jpg"
+      },
+      "medias" : [
+        {
+          "file" : {
+            "file" : "assets/mock/feed/videos/video_4.mp4"
+          },
+          "type" : "video"
+        }
+      ]
+    },
+    {
+      "id" : "1",
+      "user" : {
+        "id" : "0",
+        "username" : "mani.rahmanzade",
+        "name" : "Mani Rahmanzadeh",
+        "user_avatar" : {
+          "file" : "assets/mock/feed/images/me.png"
+        },
+        "stories" : [
+          {
+            "id" : "0",
+            "media" : {
+              "file" : {
+                "file" : "assets/mock/feed/images/post.jpg"
+              },
+              "type" : "image"
+            },
+            "seen" : false
+          },
+          {
+            "id" : "0",
+            "media" : {
+              "file" : {
+                "file" : "assets/mock/feed/images/post.jpg"
+              },
+              "type" : "image"
+            },
+            "seen" : false
+          }
+        ]
+      },
+      "likes_number" : 335,
+      "comments_number" : 56,
+      "people_liked" : ["parsa", "jafar", "akbar"],
+      "caption" : "A good day with my friend Parsa. love you so much bro...",
+      "is_slide" : true,
+      "liked" : true,
+      "saved" : false,
+      "aspect_ratio": 0.8,
+      "cover" : {
+        "file" : "assets/mock/feed/images/post.jpg"
+      },
+      "medias" : [
+        {
+          "file" : {
+            "file" : "assets/mock/feed/videos/video_4.mp4"
+          },
+          "type" : "video"
+        }
+      ]
+    },
+    {
+      "id" : "0",
+      "user" : {
+        "id" : "0",
+        "username" : "mani.rahmanzade",
+        "name" : "Mani Rahmanzadeh",
+        "user_avatar" : {
+          "file" : "assets/mock/feed/images/me.png"
+        },
+        "stories" : [
+          {
+            "id" : "0",
+            "media" : {
+              "file" : {
+                "file" : "assets/mock/feed/images/post.jpg"
+              },
+              "type" : "image"
+            },
+            "seen" : false
+          },
+          {
+            "id" : "0",
+            "media" : {
+              "file" : {
+                "file" : "assets/mock/feed/images/post.jpg"
+              },
+              "type" : "image"
+            },
+            "seen" : false
+          }
+        ]
+      },
+      "likes_number" : 335,
+      "comments_number" : 56,
+      "people_liked" : ["parsa", "jafar", "akbar"],
+      "caption" : "Friendship is like a beautiful garden, where trust and loyalty are the flowers that bloom in every season. \uD83C\uDF3C\uD83C\uDF3F Through the highs and lows, friends stand by your side, making life's journey sweeter. Cherish these precious connections and celebrate the moments that make us smile, for true friendship is a treasure that lasts a lifetime. \uD83E\uDD17\uD83D\uDCAB #FriendsForLife #ForeverGrateful #FriendshipGoals",
+      "is_slide" : true,
+      "liked" : false,
+      "saved" : true,
+      "aspect_ratio": 1.91,
+      "cover" : {
+        "file" : "assets/mock/feed/images/post.jpg"
+      },
+      "medias" : [
+        {
+          "file" : {
+            "file" : "assets/mock/feed/images/post.jpg"
+          },
+          "type" : "image"
+        },
+        {
+          "file" : {
+            "file" : "assets/mock/feed/videos/video_4.mp4"
+          },
+          "type" : "video"
+        },
+        {
+          "file" : {
+            "file" : "assets/mock/feed/videos/video.mp4"
+          },
+          "type" : "video"
+        }
+      ]
+    },
+    {
+      "id" : "1",
+      "user" : {
+        "id" : "0",
+        "username" : "mani.rahmanzade",
+        "name" : "Mani Rahmanzadeh",
+        "user_avatar" : {
+          "file" : "assets/mock/feed/images/me.png"
+        },
+        "stories" : [
+          {
+            "id" : "0",
+            "media" : {
+              "file" : {
+                "file" : "assets/mock/feed/images/post.jpg"
+              },
+              "type" : "image"
+            },
+            "seen" : false
+          },
+          {
+            "id" : "0",
+            "media" : {
+              "file" : {
+                "file" : "assets/mock/feed/images/post.jpg"
+              },
+              "type" : "image"
+            },
+            "seen" : false
+          }
+        ]
+      },
+      "likes_number" : 335,
+      "comments_number" : 56,
+      "people_liked" : ["parsa", "jafar", "akbar"],
+      "caption" : "A good day with my friend Parsa. love you so much bro...",
+      "is_slide" : true,
+      "liked" : true,
+      "saved" : false,
+      "aspect_ratio": 1.0,
+      "cover" : {
+        "file" : "assets/mock/feed/images/post.jpg"
+      },
+      "medias" : [
+        {
+          "file" : {
+            "file" : "assets/mock/feed/videos/video_4.mp4"
+          },
+          "type" : "video"
+        }
+      ]
+    },
+    {
+      "id" : "1",
+      "user" : {
+        "id" : "0",
+        "username" : "mani.rahmanzade",
+        "name" : "Mani Rahmanzadeh",
+        "user_avatar" : {
+          "file" : "assets/mock/feed/images/me.png"
+        },
+        "stories" : [
+          {
+            "id" : "0",
+            "media" : {
+              "file" : {
+                "file" : "assets/mock/feed/images/post.jpg"
+              },
+              "type" : "image"
+            },
+            "seen" : false
+          },
+          {
+            "id" : "0",
+            "media" : {
+              "file" : {
+                "file" : "assets/mock/feed/images/post.jpg"
+              },
+              "type" : "image"
+            },
+            "seen" : false
+          }
+        ]
+      },
+      "likes_number" : 335,
+      "comments_number" : 56,
+      "people_liked" : ["parsa", "jafar", "akbar"],
+      "caption" : "A good day with my friend Parsa. love you so much bro...",
+      "is_slide" : true,
+      "liked" : true,
+      "saved" : false,
+      "aspect_ratio": 0.8,
+      "cover" : {
+        "file" : "assets/mock/feed/images/post.jpg"
+      },
+      "medias" : [
+        {
+          "file" : {
+            "file" : "assets/mock/feed/videos/video_4.mp4"
+          },
+          "type" : "video"
+        }
+      ]
     }
   ],
   "total_results" : 50

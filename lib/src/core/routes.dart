@@ -42,6 +42,147 @@ class Routes {
                   path: 'stories/:user_id',
                   widget: const StoriesPage(),
                 ),
+                VWidget(
+                  path: 'page/:user_id',
+                  widget: const PagePage(),
+                  stackedRoutes: [
+                    VPopHandler(
+                      onPop: (vRedirector) async =>
+                      (vRedirector.historyCanBack())
+                          ? vRedirector.historyBack()
+                          : vRedirector.pop(),
+                      onSystemPop: (vRedirector) async =>
+                      (vRedirector.historyCanBack())
+                          ? vRedirector.historyBack()
+                          : vRedirector.pop(),
+                      stackedRoutes: [
+                        VWidget(
+                          path: 'stories/:user_id',
+                          widget: const StoriesPage(),
+                        ),
+                        VWidget(
+                          path: 'post_detail/:post_id',
+                          widget: const PostDetailPage(),
+                          stackedRoutes: [
+                            VPopHandler(
+                              onPop: (vRedirector) async => (vRedirector.historyCanBack())
+                                  ? vRedirector.historyBack()
+                                  : vRedirector.pop(),
+                              onSystemPop: (vRedirector) async => (vRedirector.historyCanBack())
+                                  ? vRedirector.historyBack()
+                                  : vRedirector.pop(),
+                              stackedRoutes: [
+                                VWidget(
+                                  path: 'page/:user_id',
+                                  widget: const PagePage(),
+                                  stackedRoutes: [
+                                    VPopHandler(
+                                      onPop: (vRedirector) async =>
+                                      (vRedirector.historyCanBack())
+                                          ? vRedirector.historyBack()
+                                          : vRedirector.pop(),
+                                      onSystemPop: (vRedirector) async =>
+                                      (vRedirector.historyCanBack())
+                                          ? vRedirector.historyBack()
+                                          : vRedirector.pop(),
+                                      stackedRoutes: [
+                                        VWidget(
+                                          path: 'stories/:user_id',
+                                          widget: const StoriesPage(),
+                                        ),
+                                        VWidget(
+                                          path: 'post_detail/:post_id',
+                                          widget: const PostDetailPage(),
+                                          stackedRoutes: [
+                                            VPopHandler(
+                                              onPop: (vRedirector) async => (vRedirector.historyCanBack())
+                                                  ? vRedirector.historyBack()
+                                                  : vRedirector.pop(),
+                                              onSystemPop: (vRedirector) async => (vRedirector.historyCanBack())
+                                                  ? vRedirector.historyBack()
+                                                  : vRedirector.pop(),
+                                              stackedRoutes: [
+                                                VWidget(
+                                                  path: 'comments/:post_id',
+                                                  widget: const CommentsPage(),
+                                                ),
+                                                VWidget(
+                                                  path: 'stories/:user_id',
+                                                  widget: const StoriesPage(),
+                                                ),
+                                                VWidget(
+                                                  path: 'page/:user_id',
+                                                  widget: const PagePage(),
+                                                  stackedRoutes: [
+                                                    VPopHandler(
+                                                      onPop: (vRedirector) async =>
+                                                      (vRedirector.historyCanBack())
+                                                          ? vRedirector.historyBack()
+                                                          : vRedirector.pop(),
+                                                      onSystemPop: (vRedirector) async =>
+                                                      (vRedirector.historyCanBack())
+                                                          ? vRedirector.historyBack()
+                                                          : vRedirector.pop(),
+                                                      stackedRoutes: [
+                                                        VWidget(
+                                                          path: 'stories/:user_id',
+                                                          widget: const StoriesPage(),
+                                                        ),
+                                                        VWidget(
+                                                          path: 'post_detail/:post_id',
+                                                          widget: const PostDetailPage(),
+                                                          stackedRoutes: [
+                                                            VPopHandler(
+                                                              onPop: (vRedirector) async => (vRedirector.historyCanBack())
+                                                                  ? vRedirector.historyBack()
+                                                                  : vRedirector.pop(),
+                                                              onSystemPop: (vRedirector) async => (vRedirector.historyCanBack())
+                                                                  ? vRedirector.historyBack()
+                                                                  : vRedirector.pop(),
+                                                              stackedRoutes: [
+                                                                VWidget(
+                                                                  path: 'comments/:post_id',
+                                                                  widget: const CommentsPage(),
+                                                                ),
+                                                                VWidget(
+                                                                  path: 'stories/:user_id',
+                                                                  widget: const StoriesPage(),
+                                                                ),
+                                                              ],
+                                                            ),
+                                                          ],
+                                                        ),
+
+                                                      ],
+                                                    ),
+                                                  ],
+                                                ),
+                                              ],
+                                            ),
+                                          ],
+                                        ),
+
+                                      ],
+                                    ),
+                                  ],
+                                ),
+                                VWidget(
+                                  path: 'comments/:post_id',
+                                  widget: const CommentsPage(),
+                                ),
+                                VWidget(
+                                  path: 'stories/:user_id',
+                                  widget: const StoriesPage(),
+                                ),
+                              ],
+                            ),
+                          ],
+                        ),
+
+                      ],
+                    ),
+                  ],
+                ),
               ],
             ),
           ],
@@ -78,6 +219,53 @@ class Routes {
                           path: 'stories/:user_id',
                           widget: const StoriesPage(),
                         ),
+                        VWidget(
+                          path: 'page/:user_id',
+                          widget: const PagePage(),
+                          stackedRoutes: [
+                            VPopHandler(
+                              onPop: (vRedirector) async =>
+                              (vRedirector.historyCanBack())
+                                  ? vRedirector.historyBack()
+                                  : vRedirector.pop(),
+                              onSystemPop: (vRedirector) async =>
+                              (vRedirector.historyCanBack())
+                                  ? vRedirector.historyBack()
+                                  : vRedirector.pop(),
+                              stackedRoutes: [
+                                VWidget(
+                                  path: 'stories/:user_id',
+                                  widget: const StoriesPage(),
+                                ),
+                                VWidget(
+                                  path: 'post_detail/:post_id',
+                                  widget: const PostDetailPage(),
+                                  stackedRoutes: [
+                                    VPopHandler(
+                                      onPop: (vRedirector) async => (vRedirector.historyCanBack())
+                                          ? vRedirector.historyBack()
+                                          : vRedirector.pop(),
+                                      onSystemPop: (vRedirector) async => (vRedirector.historyCanBack())
+                                          ? vRedirector.historyBack()
+                                          : vRedirector.pop(),
+                                      stackedRoutes: [
+                                        VWidget(
+                                          path: 'comments/:post_id',
+                                          widget: const CommentsPage(),
+                                        ),
+                                        VWidget(
+                                          path: 'stories/:user_id',
+                                          widget: const StoriesPage(),
+                                        ),
+                                      ],
+                                    ),
+                                  ],
+                                ),
+
+                              ],
+                            ),
+                          ],
+                        ),
                       ],
                     ),
                   ],
@@ -103,6 +291,49 @@ class Routes {
                         VWidget(
                           path: 'page/:user_id',
                           widget: const PagePage(),
+                          stackedRoutes: [
+                            VPopHandler(
+                              onPop: (vRedirector) async =>
+                              (vRedirector.historyCanBack())
+                                  ? vRedirector.historyBack()
+                                  : vRedirector.pop(),
+                              onSystemPop: (vRedirector) async =>
+                              (vRedirector.historyCanBack())
+                                  ? vRedirector.historyBack()
+                                  : vRedirector.pop(),
+                              stackedRoutes: [
+                                VWidget(
+                                  path: 'stories/:user_id',
+                                  widget: const StoriesPage(),
+                                ),
+                                VWidget(
+                                  path: 'post_detail/:post_id',
+                                  widget: const PostDetailPage(),
+                                  stackedRoutes: [
+                                    VPopHandler(
+                                      onPop: (vRedirector) async => (vRedirector.historyCanBack())
+                                          ? vRedirector.historyBack()
+                                          : vRedirector.pop(),
+                                      onSystemPop: (vRedirector) async => (vRedirector.historyCanBack())
+                                          ? vRedirector.historyBack()
+                                          : vRedirector.pop(),
+                                      stackedRoutes: [
+                                        VWidget(
+                                          path: 'comments/:post_id',
+                                          widget: const CommentsPage(),
+                                        ),
+                                        VWidget(
+                                          path: 'stories/:user_id',
+                                          widget: const StoriesPage(),
+                                        ),
+                                      ],
+                                    ),
+                                  ],
+                                ),
+
+                              ],
+                            ),
+                          ],
                         ),
                       ],
                     ),

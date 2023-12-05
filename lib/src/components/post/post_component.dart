@@ -49,9 +49,12 @@ class PostComponent extends StatelessWidget {
               const SizedBox(
                 width: 5,
               ),
-              Text(
-                post.user.username,
-                style: Theme.of(context).textTheme.displayLarge,
+              InkWell(
+                onTap: () => context.vRouter.to('page/${post.user.id}'),
+                child: Text(
+                  post.user.username,
+                  style: Theme.of(context).textTheme.displayLarge,
+                ),
               ),
               Expanded(child: Container()),
               IconButton(
